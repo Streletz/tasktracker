@@ -155,18 +155,17 @@ class TasksController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
-        
+        $this->findModel($id)->delete();        
         return $this->redirect([
             'index'
         ]);
     }
 
     /**
-     * РР·РјРµРЅРµРЅРёРµ СЃС‚Р°С‚СѓСЃР° Р·Р°РґР°С‡Рё.
+     * Изменение статуса задачи.
      *
      * @param integer $id
-     *            id Р·Р°РґР°С‡Рё.
+     *            id задачи.
      * @return \yii\web\Response
      */
     public function actionStatus($id)

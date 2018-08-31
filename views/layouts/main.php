@@ -45,8 +45,6 @@ AppAsset::register($this);
             !Yii::$app->user->isGuest?['label' => 'Главная', 'url' => ['/site/index']]:'',
             !Yii::$app->user->isGuest?['label' => 'Задачи', 'url' => ['/tasks/index']]:'',
             ((!Yii::$app->user->isGuest) && (Yii::$app->user->identity->isAdmin()))?['label' => 'Пользователи', 'url' => ['/users/index']]:'',
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Войти', 'url' => ['/site/login']]
             ) : (
@@ -78,7 +76,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; Стрелец Coder? 2018</p>
+        <p class="pull-left">&copy; Стрелец Coder, 2018</p>
 
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>

@@ -46,6 +46,40 @@ class SearchTasks extends Tasks
     public function search($params)
     {
         $query = Tasks::find();
+        return $this->prepareDataProvider($query);
+
+    }
+    
+    /**
+     * Поиск задач, в которых текущий пользователь, является исполнителем.
+     * @param array $params
+     * @return \yii\data\ActiveDataProvider
+     */
+    public function searchMyTasks($params)
+    {
+        $query = Tasks::find()->where(['worker_id'=>Yii::$app->user->getId()]);
+        return $this->prepareDataProvider($query);
+        
+    }
+    
+    /**
+     * Поиск задач, в которых текущий пользователь, является создателем.
+     * @param array $params
+     * @return \yii\data\ActiveDataProvider
+     */
+    public function searchTasksCreatedByMe($params)
+    {
+        $query = Tasks::find()->where(['creator_id'=>Yii::$app->user->getId()]);
+        return $this->prepareDataProvider($query);
+        
+    }
+    
+    /**
+     * Подготовка DataProvuider к работе с GridView.
+     * @param query
+     */
+     private function prepareDataProvider($query)
+    {
         $query->joinWith(['creator'=>function($query){
             $query->from(Users::tableName().' creatorUser');
         }, 
@@ -99,4 +133,5 @@ class SearchTasks extends Tasks
 
         return $dataProvider;
     }
+
 }

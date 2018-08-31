@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Создать задачу', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Новая задача', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 <?php if(Yii::$app->user->identity->isAdmin() || Yii::$app->user->identity->isManager() ) {?>
     <?= GridView::widget([
@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],            
             ['attribute' =>'task_name', 'label'=>'Задача'], 
-            ['attribute' =>'creatorName', 'label'=>'Создал','value'=>'creator.fio'],            
+            ['attribute' =>'creatorName', 'label'=>'Создана','value'=>'creator.fio'],            
             ['attribute' =>'workerName', 'label'=>'Исполнитель','value'=>'worker.fio'],
             ['attribute' =>'deadLine_date', 'label'=>'Выполнить до'],
             ['attribute' =>'start_date', 'label'=>'Начато'],
@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['attribute' =>'task_name', 'label'=>'Задача', 'format' => 'raw',  'value'=>function ($data) {
                 return Html::a($data->task_name, Url::to(['tasks/view','id' => $data->id]));
             },], 
-            ['attribute' =>'creatorName', 'label'=>'Создал','value'=>'creator.fio'],            
+            ['attribute' =>'creatorName', 'label'=>'Создана','value'=>'creator.fio'],            
             ['attribute' =>'workerName', 'label'=>'Исполнитель','value'=>'worker.fio'],
             ['attribute' =>'deadLine_date', 'label'=>'Выполнить до'],
             ['attribute' =>'start_date', 'label'=>'Начато'],
