@@ -16,8 +16,8 @@ use phpDocumentor\Reflection\Types\Boolean;
  * @property string $pass
  * @property string $auth_key
  *
- * @property Tasks[] $tasks
- * @property Tasks[] $tasks0
+ * @property Tasks[] $tasksCreated
+ * @property Tasks[] $tasksWork
  * @property UserRoles $role
  */
 class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
@@ -64,7 +64,7 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getTasks()
+    public function getTasksCreated()
     {
         return $this->hasMany(Tasks::className(), ['creator_id' => 'id']);
     }
@@ -72,7 +72,7 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getTasks0()
+    public function getTasksWork()
     {
         return $this->hasMany(Tasks::className(), ['worker_id' => 'id']);
     }

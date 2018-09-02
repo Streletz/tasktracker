@@ -1,5 +1,7 @@
 <?php
+
 use yii\helpers\Html;
+use yii\bootstrap\Alert;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
@@ -11,7 +13,16 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="users-index">
 
-	<h1><?= Html::encode($this->title) ?></h1>    
+	<h1><?= Html::encode($this->title) ?></h1>  
+	
+	<?php if (Yii::$app->session->hasFlash('error_message')): ?> 
+    <?= Alert::widget([
+            'options' => [
+            'class' => 'alert-danger',
+            ],
+            'body' => Yii::$app->session->getFlash('error_message'),
+        ]);?> 
+	<?php endif; ?>   
 
     <p>
         <?= Html::a('Новый', ['create'], ['class' => 'btn btn-success']) ?>
