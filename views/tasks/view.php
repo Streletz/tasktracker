@@ -31,9 +31,27 @@ $this->params['breadcrumbs'][] = $this->title;
             'description:ntext',            
             ['attribute' =>'creator.fio','label'=>'Создал'],            
             ['attribute' =>'worker.fio','label'=>'Исполнитель'],
-            'deadLine_date',
-            'start_date',
-            'end_date',
+            ['attribute' =>'deadLine_date', 'label'=>'Выполнить до', 'value'=>function($data) {
+                if($data->deadLine_date!=''){
+                    return (new DateTime($data->deadLine_date))->format('d.m.Y');
+                }else{
+                    return null;
+                }
+            }],
+            ['attribute' =>'start_date', 'label'=>'Начато', 'value'=>function($data) {
+                if($data->start_date!=''){
+                    return (new DateTime($data->start_date))->format('d.m.Y');
+                }else{
+                    return null;
+                }
+            }],
+            ['attribute' =>'end_date', 'label'=>'Завершено', 'value'=>function($data) {
+                if($data->start_date!=''){
+                    return (new DateTime($data->end_date))->format('d.m.Y');
+                }else{
+                    return null;
+                }
+            }],
             ['attribute' =>'taskStatus.status','label'=>'Статус'],
         ],
     ]) ?>

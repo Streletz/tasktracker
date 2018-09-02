@@ -162,10 +162,10 @@ class TasksController extends Controller
     }
 
     /**
-     * Изменение статуса задачи.
+     * РР·РјРµРЅРµРЅРёРµ СЃС‚Р°С‚СѓСЃР° Р·Р°РґР°С‡Рё.
      *
      * @param integer $id
-     *            id задачи.
+     *            id Р·Р°РґР°С‡Рё.
      * @return \yii\web\Response
      */
     public function actionStatus($id)
