@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="tasks-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
+<?php  if(Yii::$app->user->identity->isAdmin() || Yii::$app->user->identity->isManager()){?>
     <p>
         <?= Html::a('Редактировать', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
@@ -24,6 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
+    <?php } ?>
 
     <?= DetailView::widget([
         'model' => $model,

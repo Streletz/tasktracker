@@ -76,7 +76,8 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; Стрелец Coder, 2018</p>
+    	<p class="pull-left" style="margin-right: 15px">Task tracker (версия <?= APP_VER ?>) </p>
+        <p class="pull-left">&copy; <a href="http://streletzcoder.ru/">Стрелец Coder</a>, 2018</p>
 
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>
