@@ -85,8 +85,13 @@ class TasksController extends Controller
      */
     public function actionView($id)
     {
+        $model = $this->findModel($id);
+        if((new \DateTime($model->deadLine_date)) < (new \DateTime())){
+            $errorMessage="Срок выполнения задачи истёк!";
+            Yii::$app->session->setFlash('error_message', $errorMessage);
+        }
         return $this->render('view', [
-            'model' => $this->findModel($id)
+            'model' => $model
         ]);
     }
 

@@ -1,5 +1,6 @@
 <?php
 
+use yii\bootstrap\Alert;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
@@ -13,7 +14,15 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="tasks-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
-<?php  if(Yii::$app->user->identity->isAdmin() || Yii::$app->user->identity->isManager()){?>
+    <?php if (Yii::$app->session->hasFlash('error_message')): ?> 
+    <?= Alert::widget([
+            'options' => [
+            'class' => 'alert-danger',
+            ],
+            'body' => Yii::$app->session->getFlash('error_message'),
+        ]);?> 
+	<?php endif; ?> 
+	<?php  if(Yii::$app->user->identity->isAdmin() || Yii::$app->user->identity->isManager()){?>
     <p>
         <?= Html::a('Редактировать', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
