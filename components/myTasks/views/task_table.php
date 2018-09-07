@@ -8,6 +8,14 @@ use yii\helpers\Url;
 <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'rowOptions' => function ($model, $key, $index, $grid){
+            $class = (new DateTime($model->deadLine_date))<(new DateTime())?'danger':'';
+            return [
+                'key'=>$key,
+                'index'=>$index,
+                'class'=>$class
+            ];
+        },
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],            
             ['attribute' =>'task_name', 'label'=>'Задача', 'format' => 'raw',  'value'=>function ($data) {
