@@ -8,7 +8,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Tasks */
 
 $this->title = $model->task_name;
-$this->params['breadcrumbs'][] = ['label' => 'Tasks', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Задачи', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tasks-view">
@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Удалить эту задачу?',
                 'method' => 'post',
             ],
         ]) ?>

@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Tasks */
 
-$this->title = 'Update Tasks: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Tasks', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->title = 'Редактирование задачи: ' . $model->task_name;
+$this->params['breadcrumbs'][] = ['label' => 'Задачи', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->task_name, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = 'Редактирование';
 ?>
 <div class="tasks-update">
 
