@@ -44,7 +44,7 @@ AppAsset::register($this);
         'items' => [
             !Yii::$app->user->isGuest?['label' => 'Главная', 'url' => ['/site/index']]:'',
             !Yii::$app->user->isGuest?['label' => 'Задачи', 'url' => ['/tasks/index']]:'',
-            ((!Yii::$app->user->isGuest) && ((Yii::$app->user->identity->isManager()) || (Yii::$app->user->identity->isAdmin())))?['label' => 'Клиенты', 'url' => ['/clients/index']]:'',            
+            ((!Yii::$app->user->isGuest) && ((Yii::$app->user->identity->isManager()) || (Yii::$app->user->identity->isAdmin())))?['label' => 'Клиенты', 'url' => ['/crm/clients/index']]:'',            
             ((!Yii::$app->user->isGuest) && (Yii::$app->user->identity->isAdmin()))?['label' => 'Пользователи', 'url' => ['/users/index']]:'',
             Yii::$app->user->isGuest ? (
                 ['label' => 'Войти', 'url' => ['/site/login']]

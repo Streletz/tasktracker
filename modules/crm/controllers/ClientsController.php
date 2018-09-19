@@ -1,6 +1,6 @@
 <?php
 
-namespace app\controllers;
+namespace app\modules\crm\controllers;
 
 use Yii;
 use app\models\Clients;
