@@ -32,7 +32,7 @@ class TasksController extends Controller
                     [
                         'allow' => true,
                         'matchCallback' => function ($rule, $action) {
-                        if (($action->id != 'index') && ($action->id != 'view') && ($action->id != 'status')) {
+                            if (($action->id != 'index') && ($action->id != 'view') && ($action->id != 'status')) {
                                 return (! Yii::$app->user->isGuest) && ((Users::findIdentity(Users::findIdentity(Yii::$app->user->id)->isAdmin())) || (Users::findIdentity(Users::findIdentity(Yii::$app->user->id)->isManager())));
                             } else {
                                 return (! Yii::$app->user->isGuest);
@@ -86,8 +86,8 @@ class TasksController extends Controller
     public function actionView($id)
     {
         $model = $this->findModel($id);
-        if((new \DateTime($model->deadLine_date)) < (new \DateTime())){
-            $errorMessage="Срок выполнения задачи истёк!";
+        if ($model->taskIsOverdue()) {
+            $errorMessage = "Срок выполнения задачи истёк!";
             Yii::$app->session->setFlash('error_message', $errorMessage);
         }
         return $this->render('view', [
@@ -160,7 +160,7 @@ class TasksController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();        
+        $this->findModel($id)->delete();
         return $this->redirect([
             'index'
         ]);

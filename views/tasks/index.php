@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'rowOptions' => function ($model, $key, $index, $grid){
-            $class= (new DateTime($model->deadLine_date)) < (new DateTime())?'danger':'';
+            $class= $model->taskIsOverdue() ? 'danger' : '';
             return [
                 'key'=>$key,
                 'index'=>$index,
