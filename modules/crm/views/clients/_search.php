@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\SearchClientd */
+/* @var $model app\modules\crm\models\SearchClient */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -13,7 +13,7 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
         'method' => 'get',
-    ]); ?>
+    ]); ?> 
 
     <?= $form->field($model, 'id') ?>
 

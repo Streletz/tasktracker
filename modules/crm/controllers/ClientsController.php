@@ -2,17 +2,17 @@
 
 namespace app\modules\crm\controllers;
 
+use app\modules\crm\models\SearchClient;
+use app\modules\crm\models\Clients;
 use Yii;
-use app\models\Clients;
-use app\models\SearchClient;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
  * ClientsController implements the CRUD actions for Clients model.
  */
-class ClientsController extends Controller
+class ClientsController extends Controller 
 {
     /**
      * {@inheritdoc}

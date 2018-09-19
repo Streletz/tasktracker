@@ -1,16 +1,16 @@
 <?php
 
-namespace app\models;
+namespace app\modules\crm\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Clients;
+use app\modules\crm\models\Clients;
 
 /**
  * SearchClientd represents the model behind the search form of `app\models\Clients`.
  */
-class SearchClient extends Clients
+class SearchClient extends Clients 
 {
     /**
      * {@inheritdoc}
