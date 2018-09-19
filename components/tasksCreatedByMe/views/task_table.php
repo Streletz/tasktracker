@@ -9,7 +9,7 @@ use yii\helpers\Url;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'rowOptions' => function ($model, $key, $index, $grid){
-            $class = (new DateTime($model->deadLine_date))<(new DateTime())?'danger':'';
+         $class = $model->taskIsOverdue() ? 'danger' : '';
             return [
                 'key'=>$key,
                 'index'=>$index,
