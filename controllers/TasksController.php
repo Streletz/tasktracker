@@ -31,9 +31,31 @@ class TasksController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
+                        'actions' => [
+                            'create',
+                            'update',
+                            'delete'
+                        ],
                         'roles' => [
                             'admin',
                             'manager'
+                        ],
+                        'denyCallback' => function ($rule, $action) {
+                            return $this->redirect([
+                                'site/login'
+                            ]);
+                        }
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => [
+                            'view',
+                            'status'
+                        ],
+                        'roles' => [
+                            'admin',
+                            'manager',
+                            'user'
                         ],
                         'denyCallback' => function ($rule, $action) {
                             return $this->redirect([
