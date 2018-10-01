@@ -33,6 +33,7 @@ class TasksController extends Controller
                         'allow' => true,
                         'actions' => [
                             'create',
+                            'index',
                             'update',
                             'delete'
                         ],

@@ -10,6 +10,8 @@ use yii\widgets\DetailView;
 $this->title = $model->task_name;
 $this->params['breadcrumbs'][] = ['label' => 'Задачи', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
+
 ?>
 <div class="tasks-view">
 
@@ -22,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'body' => Yii::$app->session->getFlash('error_message'),
         ]);?> 
 	<?php endif; ?> 
-	<?php  if(Yii::$app->user->identity->isAdmin() || Yii::$app->user->identity->isManager()){?>
+	<?php  if(Yii::$app->user->can('admin')|| Yii::$app->user->can('manager')){?>
     <p>
         <?= Html::a('Редактировать', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
@@ -33,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
-    <?php } ?>
+    <?php }  ?>
 
     <?= DetailView::widget([
         'model' => $model,

@@ -4,6 +4,7 @@ namespace app\models;
 
 use Yii;
 use yii\base\NotSupportedException;
+//use yii\rbac\Assignment;
 use phpDocumentor\Reflection\Types\Boolean;
 
 /**
@@ -166,23 +167,36 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     /**
      * Является ли пользователь администратором.
      * @return boolean
+     * @deprecated 2.0.0
+     * Используется в устаревшем контроле доступа по ролям.
      */
     public function isAdmin(){
-        return $this->role->user_role==='Администратор';
+        return isset($this->getUserRoles()['admin']);
     }
     /**
      * Является ли пользователь менеджером.
      * @return boolean
+     * @deprecated 2.0.0
+     * Используется в устаревшем контроле доступа по ролям.
      */
     public function isManager(){
-        return $this->role->user_role==='Менеджер';
+        return isset($this->getUserRoles()['manager']);
     }
     /**
      * Является ли пользователь  рядовым пользователем
      * @return boolean
+     * @deprecated 2.0.0
+     * Используется в устаревшем контроле доступа по ролям.
      */
     public function isUser(){
-        return $this->role->user_role==='Пользователь';
+        return isset($this->getUserRoles()['user']);
+    }
+    /**
+     * Роли назначенные пользователю.
+     * @return \yii\rbac\Role[]
+     */
+    public function getUserRoles(){        
+        return Yii::$app->authManager->getRolesByUser($this->id);
     }
     
 }

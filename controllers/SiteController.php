@@ -66,7 +66,7 @@ class SiteController extends Controller
         if(Yii::$app->user->isGuest){
             return $this->redirect(['site/login']);
         }
-        $this->isAdmin=Users::findIdentity(Users::findIdentity(Yii::$app->user->id)->isAdmin());
+        $this->isAdmin=Users::findIdentity(Users::findIdentity(Yii::$app->user->id)->isAdmin());        
         return $this->render('index',['isAdmin'=>$this->isAdmin]);
     }
 
