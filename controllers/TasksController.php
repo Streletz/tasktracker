@@ -31,13 +31,10 @@ class TasksController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'matchCallback' => function ($rule, $action) {
-                            if (($action->id != 'index') && ($action->id != 'view') && ($action->id != 'status')) {
-                                return (! Yii::$app->user->isGuest) && ((Users::findIdentity(Users::findIdentity(Yii::$app->user->id)->isAdmin())) || (Users::findIdentity(Users::findIdentity(Yii::$app->user->id)->isManager())));
-                            } else {
-                                return (! Yii::$app->user->isGuest);
-                            }
-                        },
+                        'roles' => [
+                            'admin',
+                            'manager'
+                        ],
                         'denyCallback' => function ($rule, $action) {
                             return $this->redirect([
                                 'site/login'

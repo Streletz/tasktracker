@@ -27,9 +27,9 @@ class UsersController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'matchCallback' => function ($rule, $action) {
-                            return (! Yii::$app->user->isGuest) && (Users::findIdentity(Users::findIdentity(Yii::$app->user->id)->isAdmin()));
-                        },
+                        'roles' => [
+                            'admin'
+                        ],
                         'denyCallback' => function ($rule, $action) {
                             return $this->redirect([
                                 'site/login'
@@ -56,8 +56,8 @@ class UsersController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new SearchUsers();        
-        $request = Yii::$app->request;        
+        $searchModel = new SearchUsers();
+        $request = Yii::$app->request;
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         
         return $this->render('index', [
@@ -92,6 +92,10 @@ class UsersController extends Controller
         
         if ($model->load(Yii::$app->request->post())) {
             $model->setPassword($model->pass);
+            $userRole = Yii::$app->authManager->getRole(User_roles::findOne([
+                'id' => $model->role_id
+            ])->role_name);
+            Yii::$app->authManager->assign($userRole, $model->getId());
             if ($model->save()) {
                 return $this->redirect([
                     'view',
@@ -118,10 +122,21 @@ class UsersController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        
+        $userOldData = Users::findOne([
+            'id' => $model->id
+        ]);
         if ($model->load(Yii::$app->request->post())) {
             if ($model->pass != '*****') {
                 $model->setPassword($model->pass);
+            } else {
+                $model->pass = $userOldData->pass;
+            }
+            if ($model->role_id != $userOldData->role_id) {                
+                Yii::$app->authManager->revokeAll($model->id); 
+                $userRole = Yii::$app->authManager->getRole(User_roles::findOne([
+                    'id' => $model->role_id
+                ])->role_name);
+                Yii::$app->authManager->assign($userRole, $model->getId());
             }
             if ($model->save()) {
                 return $this->redirect([
@@ -155,7 +170,7 @@ class UsersController extends Controller
                 'index'
             ]);
         } else {
-            $errorMessage="Невозможно удалить пользователя $userToRemove->fio ($userToRemove->username), т.к. он является создателем или исполнителем в одной или нескольких задачах!";
+            $errorMessage = "Невозможно удалить пользователя $userToRemove->fio ($userToRemove->username), т.к. он является создателем или исполнителем в одной или нескольких задачах!";
             Yii::$app->session->setFlash('error_message', $errorMessage);
             return $this->redirect([
                 'index',

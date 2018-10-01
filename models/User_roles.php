@@ -9,6 +9,7 @@ use Yii;
  *
  * @property int $id
  * @property string $user_role
+ * @property string $role_name
  *
  * @property Users[] $users
  */
