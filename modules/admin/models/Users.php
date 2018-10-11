@@ -1,7 +1,8 @@
 <?php
 
-namespace app\models;
+namespace app\modules\admin\models;
 
+use app\models\Tasks;
 use Yii;
 use yii\base\NotSupportedException;
 //use yii\rbac\Assignment;

@@ -1,13 +1,13 @@
 <?php
-namespace app\controllers;
+namespace app\modules\admin\controllers;
 
+use app\modules\admin\models\SearchUsers;
+use app\modules\admin\models\User_roles;
+use app\modules\admin\models\Users;
 use Yii;
-use app\models\Users;
-use app\models\SearchUsers;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
-use app\models\User_roles;
 
 /**
  * UsersController implements the CRUD actions for Users model.
