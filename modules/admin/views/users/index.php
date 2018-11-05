@@ -5,7 +5,7 @@ use yii\bootstrap\Alert;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\SearchUsers */
+/* @var $searchModel app\modules\admin\models\SearchUsers */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Пользователи';
@@ -33,7 +33,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [['class' => 'yii\grid\SerialColumn'],
             ['attribute' => 'username','label' => 'Логин'],
             ['attribute' => 'fio','label' => 'ФИО'],            
-            ['attribute' => 'roleName','label' => 'Роль', 'value'=>'role.user_role'],
+            ['attribute' => 'roleName','label' => 'Роль', 'value'=>function($model){
+                return reset($model->getUserRoles())->description;
+            }],
             ['class' => 'yii\grid\ActionColumn']]]);
     ?>
 </div>

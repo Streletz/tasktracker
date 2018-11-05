@@ -5,10 +5,12 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Users */
+/* @var $model app\modules\admin\models\Users */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
+<?php 
+$roleId=reset($model->getUserRoles())->name;
+?>
 <div class="users-form">
 
     <?php $form = ActiveForm::begin(); ?>
@@ -17,7 +19,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'fio')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'role_id')->dropDownList(ArrayHelper::map($roles,'id','user_role')) ?>
+    <?= $form->field($model, 'roletitle')->dropDownList(ArrayHelper::map($roles,'name','description'),['options'=>[
+        "$roleId"=>['selected'=>'true']
+    ]]) ?>
 
     <?= $form->field($model, 'pass')->passwordInput(['maxlength' => true]) ?>
 

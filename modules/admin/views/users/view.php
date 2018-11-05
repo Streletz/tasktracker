@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Users */
+/* @var $model app\modules\admin\models\Users */
 
 $this->title = $model->fio;
 $this->params['breadcrumbs'][] = ['label' => 'Пользователи', 'url' => ['index']];
@@ -30,7 +30,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [            
             'username',
             'fio',
-            ['attribute'=>'role.user_role', 'label'=>'Роль'],      
+            ['attribute'=>function($model){                
+                return reset($model->getUserRoles())->description;
+            }, 'label'=>'Роль'],      
         ],
     ]) ?>
 

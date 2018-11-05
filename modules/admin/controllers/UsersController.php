@@ -130,12 +130,10 @@ class UsersController extends Controller
                 $model->setPassword($model->pass);
             } else {
                 $model->pass = $userOldData->pass;
-            }
-            if ($model->role_id != $userOldData->role_id) {                
-                Yii::$app->authManager->revokeAll($model->id); 
-                $userRole = Yii::$app->authManager->getRole(User_roles::findOne([
-                    'id' => $model->role_id
-                ])->role_name);
+            }           
+            if ($model->roletitle != reset($userOldData->getUserRoles())->name) {                
+                Yii::$app->authManager->revokeAll($model->id);                
+                $userRole=Yii::$app->authManager->getRole($model->roletitle);                
                 Yii::$app->authManager->assign($userRole, $model->getId());
             }
             if ($model->save()) {
@@ -145,7 +143,7 @@ class UsersController extends Controller
                 ]);
             }
         }
-        $roles = User_roles::find()->all();
+        $roles = Yii::$app->authManager->getRoles(); //User_roles::find()->all();
         $model->pass = '*****';
         return $this->render('update', [
             'model' => $model,

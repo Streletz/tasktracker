@@ -20,10 +20,13 @@ use phpDocumentor\Reflection\Types\Boolean;
  *
  * @property Tasks[] $tasksCreated
  * @property Tasks[] $tasksWork
- * @property UserRoles $role
  */
 class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 {
+    /**
+     * Имя роли
+     */
+    public $roletitle;
    
     /**
      * {@inheritdoc}
@@ -39,13 +42,11 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function rules()
     {
         return [
-            [['username', 'fio', 'role_id', 'pass'], 'required'],
-            [['role_id'], 'integer'],           
+            [['username', 'fio', 'roletitle', 'pass'], 'required'],                      
             [['username'], 'string', 'max' => 50],
             [['pass'], 'string', 'max' => 255],
             [['fio'], 'string', 'max' => 128],
-            [['username'], 'unique'],
-            [['role_id'], 'exist', 'skipOnError' => true, 'targetClass' => User_roles::className(), 'targetAttribute' => ['role_id' => 'id']],
+            [['username'], 'unique'],            
         ];
     }
 
@@ -58,7 +59,7 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             'id' => 'ID',
             'username' => 'Логин',
             'fio' => 'ФИО',
-            'role_id' => 'Роль',
+            'rolename' => 'Роль',
             'pass' => 'Пароль',
         ];
     }

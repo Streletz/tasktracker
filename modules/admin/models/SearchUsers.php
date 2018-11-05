@@ -45,7 +45,7 @@ class SearchUsers extends Users
     public function search($params)
     {
         $query = Users::find();
-        $query->joinWith(['role']);
+        //$query->joinWith(['auth_item','auth_asigment']);
 
         // add conditions that should always apply here
 
@@ -53,10 +53,10 @@ class SearchUsers extends Users
             'query' => $query,
         ]);
         
-        $dataProvider->sort->attributes['roleName'] = [
-            'asc' => [User_roles::tableName().'.user_role' => SORT_ASC],
-            'desc' => [User_roles::tableName().'.user_role' => SORT_DESC],
-        ];
+       /* $dataProvider->sort->attributes['roleName'] = [
+            'asc' => ['auth_item.description' => SORT_ASC],
+            'desc' => ['auth_item.description'  => SORT_DESC],
+        ];*/
 
         $this->load($params);
 
@@ -69,8 +69,8 @@ class SearchUsers extends Users
         // grid filtering conditions
 
         $query->andFilterWhere(['like', 'username', $this->username])
-            ->andFilterWhere(['like', 'fio', $this->fio])
-            ->andFilterWhere(['like', User_roles::tableName().'.user_role', $this->roleName]);
+            ->andFilterWhere(['like', 'fio', $this->fio]);
+            //->andFilterWhere(['like', User_roles::tableName().'.user_role', $this->roleName]);
 
         return $dataProvider;
     }
