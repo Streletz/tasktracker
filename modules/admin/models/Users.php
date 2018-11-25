@@ -59,7 +59,7 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             'id' => 'ID',
             'username' => 'Логин',
             'fio' => 'ФИО',
-            'rolename' => 'Роль',
+            'roletitle' => 'Роль',
             'pass' => 'Пароль',
         ];
     }
@@ -83,9 +83,13 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getRole()
+    /*public function getRole()
     {        
         return $this->hasOne(User_roles::className(), ['id' => 'role_id']);
+    }*/
+    
+    public function getauth_assignment(){
+        return $this->hasMany(AuthAssignment::className(), ['user_id' => 'id']);
     }
     
     /**
