@@ -91,19 +91,18 @@ class UsersController extends Controller
         $model = new Users();
         
         if ($model->load(Yii::$app->request->post())) {
-            $model->setPassword($model->pass);
-            $userRole = Yii::$app->authManager->getRole(User_roles::findOne([
-                'id' => $model->role_id
-            ])->role_name);
-            Yii::$app->authManager->assign($userRole, $model->getId());
+            $model->setPassword($model->pass);  
             if ($model->save()) {
+                $userRole = Yii::$app->authManager->getRole($model->roletitle);
+                Yii::$app->authManager->assign($userRole, $model->getId());
+                
                 return $this->redirect([
                     'view',
                     'id' => $model->id
                 ]);
             }
         }
-        $roles = User_roles::find()->all();
+        $roles = Yii::$app->authManager->getRoles();
         $model->pass = '';
         return $this->render('create', [
             'model' => $model,

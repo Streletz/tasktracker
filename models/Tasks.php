@@ -1,7 +1,7 @@
 <?php
 namespace app\models;
 
-use app\models\Users;
+use app\modules\admin\models\Users;
 use Yii;
 
 /**

@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use app\modules\admin\models\Users;
 use Yii;
 use yii\base\Model;
 
@@ -38,8 +39,8 @@ class LoginForm extends Model
     public function attributeLabels()
     {
         return [            
-            'username' => 'Ëîãèí',            
-            'password' => 'Ïàðîëü',
+            'username' => 'Ð›Ð¾Ð³Ð¸Ð½',            
+            'password' => 'ÐŸÐ°Ñ€Ð¾Ð»ÑŒ',
         ];
     }
 

@@ -23,8 +23,7 @@ class SearchUsers extends Users
         return [
             [
                 [
-                    'id',
-                    'role_id'
+                    'id',                    
                 ],
                 'integer'
             ],
