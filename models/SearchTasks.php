@@ -6,7 +6,7 @@ use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\Tasks;
-use app\modules\admin\models\Users;
+use app\models\Users;
 
 /**
  * SearchTasks represents the model behind the search form of `app\models\Tasks`.

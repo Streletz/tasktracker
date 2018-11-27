@@ -1,8 +1,9 @@
 <?php
 
-namespace app\modules\admin\models;
+namespace app\models;
 
 use app\models\Tasks;
+use app\modules\admin\models\AuthAssignment;
 use Yii;
 use yii\base\NotSupportedException;
 //use yii\rbac\Assignment;
@@ -14,7 +15,6 @@ use phpDocumentor\Reflection\Types\Boolean;
  * @property int $id
  * @property string $username
  * @property string $fio
- * @property int $role_id
  * @property string $pass
  * @property string $auth_key
  *
