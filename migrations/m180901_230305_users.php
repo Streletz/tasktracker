@@ -29,17 +29,16 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `fio`, `pass`, `auth_key`) VALUES
 (1, \'admin\', \'Администратор\',  \'$2y$13$YVxzIP/77yv8N5c7xMfIYeuv3sojCQZyGxy4OS4zutYIWuYRc8pB2\', \'\'),
-(3, \'manager\', \'Менеджер\',  \'$2y$13$jzS.zVPI3jEMVeh1LS9KXuAjD1vHzJhYZX7xit605HZBrEM8c0ROe\', \'\'),
-(4, \'user\', \'Пользователь\',  \'$2y$13$TbZc7gKbfW3HCJJVAgYvA.0nHQiMoVLkrukbgxgWWPaOAViypuzIS\', \'\'),
-(5, \'test\', \'Тестовый\',  \'$2y$13$S2LOAFPHZnS93A9u5vpnOeAy8UWMm34DPohmFke3.60xPfgiYY/Mu\', \'\');
+(2, \'manager\', \'Менеджер\',  \'$2y$13$jzS.zVPI3jEMVeh1LS9KXuAjD1vHzJhYZX7xit605HZBrEM8c0ROe\', \'\'),
+(3, \'user\', \'Пользователь\',  \'$2y$13$TbZc7gKbfW3HCJJVAgYvA.0nHQiMoVLkrukbgxgWWPaOAViypuzIS\', \'\'),
+(4, \'test\', \'Тестовый\',  \'$2y$13$S2LOAFPHZnS93A9u5vpnOeAy8UWMm34DPohmFke3.60xPfgiYY/Mu\', \'\');
 
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `user_name` (`username`),
-  ADD KEY `role_id` (`role_id`);
+  ADD UNIQUE KEY `user_name` (`username`); 
 
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 ALTER TABLE `users`
   ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `user_roles` (`id`) ON UPDATE CASCADE;
