@@ -4,7 +4,7 @@ namespace app\controllers;
 use Yii;
 use app\models\Tasks;
 use app\models\SearchTasks;
-use app\models\Users;
+use app\modules\admin\models\Users;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -197,6 +197,7 @@ class TasksController extends Controller
     {
         $request = Yii::$app->request;
         $status = false;
+        
         if (isset($request->bodyParams['open'])) {
             $status = Task_status::findOne([
                 'action_key' => 'open'
@@ -232,8 +233,9 @@ class TasksController extends Controller
             if ($status->action_key === 'do') {
                 $model->start_date = date('Y-m-d');
             } elseif (($status->action_key === 'success') || ($status->action_key === 'failed')) {
+                
                 $model->end_date = date('Y-m-d');
-            }
+            }            
             if ($model->save()) {
                 return $this->redirect([
                     'tasks/view',

@@ -23,7 +23,7 @@ class SearchUsers extends Users
         return [
             [
                 [
-                    'id',                    
+                    'id'
                 ],
                 'integer'
             ],
@@ -61,7 +61,8 @@ class SearchUsers extends Users
     {
         $query = Users::find();
         $query->joinWith([
-            'auth_assignment'
+            'auth_assignment',
+            'auth_assignment.itemName'
         ]);
         
         // add conditions that should always apply here
@@ -95,12 +96,16 @@ class SearchUsers extends Users
             'like',
             'username',
             $this->username
-        ])->andFilterWhere([
+        ])
+            ->andFilterWhere([
             'like',
             'fio',
             $this->fio
+        ])
+            ->andFilterWhere([
+            'like', /*AuthItem::tableName().'.name'*/'auth_item.description',
+            $this->roleName
         ]);
-        // ->andFilterWhere(['like', User_roles::tableName().'.user_role', $this->roleName]);
         
         return $dataProvider;
     }

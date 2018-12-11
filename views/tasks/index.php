@@ -50,7 +50,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             }],
             ['attribute' =>'end_date', 'label'=>'Завершено', 'value'=>function($data) {
-                if($data->start_date!=''){
+                if($data->end_date!=''){
                     return (new DateTime($data->end_date))->format('d.m.Y');
                 }else{
                     return null;
