@@ -13,6 +13,12 @@ This is a simple task tracker based on Yii 2.
  - PHP (version 7.0 or higher);
  - Linux-based web server;
  - MySQL (version 5.6 or higher).
+ 
+## WHATS NEW
+
+ - Highlight overdue tasks;
+ - Updated the separation of access rights based on roles;
+ - The admin panel is separated into a separate module.
 
 ## INSTALLATION
 
@@ -47,3 +53,13 @@ To execute the migration and create the initial data, run the following commands
  ```
 
 NOTE: The actual path to your folder on the server may differ from that shown in the example.
+
+## HISTORY
+
+### Version 2.0
+ - Highlight overdue tasks;
+ - Updated the separation of access rights based on roles;
+ - The admin panel is separated into a separate module.
+ 
+### Version 1.0
+ - First version.

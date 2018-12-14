@@ -77,10 +77,7 @@ $config = [
     'modules' => [
         'admin' => [
             'class' => 'app\modules\admin\Admin'
-        ],
-        'crm' => [
-            'class' => 'app\modules\crm\Crm'
-        ]
+        ],        
     ],
     'params' => $params
 ];
