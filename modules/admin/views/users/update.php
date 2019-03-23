@@ -13,7 +13,6 @@ $this->params['breadcrumbs'][] = 'Редактирование';
 <div class="users-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
-<?php //var_dump($roles);?>
     <?= $this->render('_form', [
         'model' => $model,
         'roles'=>$roles,
