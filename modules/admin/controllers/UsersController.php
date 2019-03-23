@@ -2,7 +2,6 @@
 namespace app\modules\admin\controllers;
 
 use app\modules\admin\models\SearchUsers;
-use app\modules\admin\models\User_roles;
 use app\modules\admin\models\Users;
 use Yii;
 use yii\filters\VerbFilter;
