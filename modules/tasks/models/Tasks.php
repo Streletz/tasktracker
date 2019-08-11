@@ -1,5 +1,5 @@
 <?php
-namespace app\models;
+namespace app\modules\tasks\models;
 
 use app\modules\admin\models\Users;
 use Yii;

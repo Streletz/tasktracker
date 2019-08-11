@@ -2,7 +2,7 @@
 namespace app\components\myTasks;
 
 use yii\base\Widget;
-use app\models\SearchTasks;
+use app\modules\tasks\models\SearchTasks;
 use Yii;
 /**
  * Отображение задач, в которых текущий пользователь является исполнителем.

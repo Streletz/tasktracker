@@ -1,11 +1,11 @@
 <?php
 
-namespace app\models;
+namespace app\modules\tasks\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Tasks;
+use app\modules\tasks\models\Tasks;
 use app\modules\admin\models\Users;
 
 /**

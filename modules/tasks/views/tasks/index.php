@@ -4,7 +4,7 @@ use yii\helpers\Url;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\SearchTasks */
+/* @var $searchModel app\modules\tasks\models\SearchTasks */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Задачи';

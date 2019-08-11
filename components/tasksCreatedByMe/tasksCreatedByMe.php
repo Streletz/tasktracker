@@ -2,7 +2,7 @@
 namespace app\components\tasksCreatedByMe;
 
 use yii\base\Widget;
-use app\models\SearchTasks;
+use app\modules\tasks\models\SearchTasks;
 use Yii;
 /**
  * Отображение задач, поставленных текущим пользователем.

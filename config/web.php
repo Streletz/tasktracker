@@ -77,7 +77,10 @@ $config = [
     'modules' => [
         'admin' => [
             'class' => 'app\modules\admin\Admin'
-        ],        
+        ], 
+        'tasks' => [
+            'class' => 'app\modules\tasks\Task'
+        ],    
     ],
     'params' => $params
 ];

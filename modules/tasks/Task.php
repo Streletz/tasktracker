@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\admin;
+namespace app\modules\tasks;
 
 /**
  * Tasks module definition class

@@ -19,7 +19,7 @@ use yii\helpers\Url;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],            
             ['attribute' =>'task_name', 'label'=>'Задача', 'format' => 'raw',  'value'=>function ($data) {
-                return Html::a($data->task_name, Url::to(['tasks/view','id' => $data->id]));
+                return Html::a($data->task_name, Url::to(['tasks/tasks/view','id' => $data->id]));
             },],                        
             ['attribute' =>'workerName', 'label'=>'Исполнитель','value'=>'worker.fio'],
             ['attribute' =>'deadLine_date', 'label'=>'Выполнить до', 'value'=>function($data) {

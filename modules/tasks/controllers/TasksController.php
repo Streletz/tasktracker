@@ -1,14 +1,14 @@
 <?php
-namespace app\controllers;
+namespace app\modules\tasks\controllers;
 
 use Yii;
-use app\models\Tasks;
-use app\models\SearchTasks;
+use app\modules\tasks\models\Tasks;
+use app\modules\tasks\models\SearchTasks;
 use app\modules\admin\models\Users;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use app\models\Task_status;
+use app\modules\tasks\models\Task_status;
 use yii\web\BadRequestHttpException;
 use yii\web\HttpException;
 
