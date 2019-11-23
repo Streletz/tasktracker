@@ -128,6 +128,8 @@ class TasksController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             $model->creator_id = Yii::$app->user->identity->getId();
             if ($model->save()) {
+                Yii::$app->notificator->email($model->creator->email, "Новая задача", "Задача \"" . $model->task_name . "\" создана.");
+                Yii::$app->notificator->email($model->worker->email, "Новая задача", "Задача \"" . $model->task_name . "\" создана и назначена Вам.");
                 return $this->redirect([
                     'view',
                     'id' => $model->id
@@ -137,6 +139,8 @@ class TasksController extends Controller
         $workers = Users::find()->orderBy([
             'fio' => SORT_ASC
         ])->all();
+        // Yii::$app->components->
+        
         return $this->render('create', [
             'model' => $model,
             'workers' => $workers
@@ -156,6 +160,8 @@ class TasksController extends Controller
         $model = $this->findModel($id);
         
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->notificator->email($model->creator->email, "Задача обновлена", "Задача \"" . $model->task_name . "\" обновленаа.");
+            Yii::$app->notificator->email($model->worker->email, "Задача обновлена", "Задача \"" . $model->task_name . "\" обновлена.");
             return $this->redirect([
                 'view',
                 'id' => $model->id
@@ -180,7 +186,10 @@ class TasksController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        $model->delete();
+        Yii::$app->notificator->email($model->creator->email, "Задача удалена", "Задача \"" . $model->task_name . "\" удалена.");
+        Yii::$app->notificator->email($model->worker->email, "Задача удалена", "Задача \"" . $model->task_name . "\" удалена.");
         return $this->redirect([
             'index'
         ]);
@@ -235,7 +244,7 @@ class TasksController extends Controller
             } elseif (($status->action_key === 'success') || ($status->action_key === 'failed')) {
                 
                 $model->end_date = date('Y-m-d');
-            }            
+            }
             if ($model->save()) {
                 return $this->redirect([
                     'tasks/view',

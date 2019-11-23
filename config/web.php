@@ -43,6 +43,9 @@ $config = [
             'identityClass' => 'app\modules\admin\models\Users',
             'enableAutoLogin' => true
         ],
+        'notificator' => [
+            'class' => 'app\components\Notificator'
+        ],
         'errorHandler' => [
             'errorAction' => 'site/error'
         ],
@@ -51,14 +54,19 @@ $config = [
             // send all mails to a file by default. You have to set
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
-            'useFileTransport' => true,
+            'useFileTransport' => false,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
+                // Your SMTP server
                 'host' => 'smtp.example.com',
-                'username' => 'example@example.com',
-                'password' => '*****',
+                // Your user name
+                'username' => 'example@exsmple.com',
+                // Your password
+                'password' => '*******',
+                // Your port
                 'port' => '465',
-                'encryption' => 'ssl',]
+                'encryption' => 'ssl'
+            ]
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -84,10 +92,10 @@ $config = [
     'modules' => [
         'admin' => [
             'class' => 'app\modules\admin\Admin'
-        ], 
+        ],
         'tasks' => [
             'class' => 'app\modules\tasks\Task'
-        ],    
+        ]
     ],
     'params' => $params
 ];

@@ -2,11 +2,8 @@
 namespace app\modules\admin\models;
 
 use app\modules\tasks\models\Tasks;
-use app\modules\admin\models\AuthAssignment;
 use Yii;
 use yii\base\NotSupportedException;
-// use yii\rbac\Assignment;
-use phpDocumentor\Reflection\Types\Boolean;
 
 /**
  * This is the model class for table "users".
