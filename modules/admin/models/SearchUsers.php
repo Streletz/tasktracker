@@ -32,7 +32,8 @@ class SearchUsers extends Users
                     'username',
                     'fio',
                     'pass',
-                    'roleName'
+                    'roleName',
+                    'email'
                 ],
                 'safe'
             ]
@@ -101,6 +102,11 @@ class SearchUsers extends Users
             'like',
             'fio',
             $this->fio
+        ])
+        ->andFilterWhere([
+            'like',
+            'email',
+            $this->email
         ])
             ->andFilterWhere([
             'like', /*AuthItem::tableName().'.name'*/'auth_item.description',

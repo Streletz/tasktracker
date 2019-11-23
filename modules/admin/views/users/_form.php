@@ -18,6 +18,8 @@ $roleId=reset($model->getUserRoles())->name;
     <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'fio')->textInput(['maxlength' => true]) ?>
+    
+    <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'roletitle')->dropDownList(ArrayHelper::map($roles,'name','description'),['options'=>[
         "$roleId"=>['selected'=>'true']

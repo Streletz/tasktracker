@@ -1,12 +1,11 @@
 <?php
-
 namespace app\modules\admin\models;
 
-use app\models\Tasks;
+use app\modules\tasks\models\Tasks;
 use app\modules\admin\models\AuthAssignment;
 use Yii;
 use yii\base\NotSupportedException;
-//use yii\rbac\Assignment;
+// use yii\rbac\Assignment;
 use phpDocumentor\Reflection\Types\Boolean;
 
 /**
@@ -17,18 +16,21 @@ use phpDocumentor\Reflection\Types\Boolean;
  * @property string $fio
  * @property string $pass
  * @property string $auth_key
+ * @property string $email
  *
  * @property Tasks[] $tasksCreated
  * @property Tasks[] $tasksWork
  */
 class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 {
+
     /**
      * Имя роли
      */
     public $roletitle;
-   
+
     /**
+     *
      * {@inheritdoc}
      */
     public static function tableName()
@@ -37,20 +39,61 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     }
 
     /**
+     *
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['username', 'fio', 'roletitle', 'pass'], 'required'],                      
-            [['username'], 'string', 'max' => 50],
-            [['pass'], 'string', 'max' => 255],
-            [['fio'], 'string', 'max' => 128],
-            [['username'], 'unique'],            
+            [
+                [
+                    'username',
+                    'fio',
+                    'email',
+                    'roletitle',
+                    'pass'
+                ],
+                'required'
+            ],
+            [
+                [
+                    'username'
+                ],
+                'string',
+                'max' => 50
+            ],
+            [
+                [
+                    'pass'
+                ],
+                'string',
+                'max' => 255
+            ],
+            [
+                [
+                    'fio'
+                ],
+                'string',
+                'max' => 128
+            ],
+            [
+                [
+                    'username'
+                ],
+                'unique'
+            ],
+            [
+                [
+                    'email'
+                ],
+                'string',
+                'max' => 255
+            ]
         ];
     }
 
     /**
+     *
      * {@inheritdoc}
      */
     public function attributeLabels()
@@ -61,52 +104,69 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             'fio' => 'ФИО',
             'roletitle' => 'Роль',
             'pass' => 'Пароль',
+            'email' => 'email'
         ];
     }
 
     /**
+     *
      * @return \yii\db\ActiveQuery
      */
     public function getTasksCreated()
     {
-        return $this->hasMany(Tasks::className(), ['creator_id' => 'id']);
+        return $this->hasMany(Tasks::className(), [
+            'creator_id' => 'id'
+        ]);
     }
 
     /**
+     *
      * @return \yii\db\ActiveQuery
      */
     public function getTasksWork()
     {
-        return $this->hasMany(Tasks::className(), ['worker_id' => 'id']);
+        return $this->hasMany(Tasks::className(), [
+            'worker_id' => 'id'
+        ]);
     }
 
     /**
+     *
      * @return \yii\db\ActiveQuery
      */
-    /*public function getRole()
-    {        
-        return $this->hasOne(User_roles::className(), ['id' => 'role_id']);
-    }*/
-    
-    public function getauth_assignment(){
-        return $this->hasMany(AuthAssignment::className(), ['user_id' => 'id']);
+    /*
+     * public function getRole()
+     * {
+     * return $this->hasOne(User_roles::className(), ['id' => 'role_id']);
+     * }
+     */
+    public function getauth_assignment()
+    {
+        return $this->hasMany(AuthAssignment::className(), [
+            'user_id' => 'id'
+        ]);
     }
-    
+
     /**
+     *
      * @inheritdoc
      */
     public static function findIdentity($id)
     {
-        return static::findOne(['id' => $id]);
+        return static::findOne([
+            'id' => $id
+        ]);
     }
-    
+
     /**
+     *
      * @inheritdoc
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
         throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');
     }
+
     /**
      * Finds user by username
      *
@@ -115,44 +175,50 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
      */
     public static function findByUsername($username)
     {
-        return static::findOne(['username' => $username]);
+        return static::findOne([
+            'username' => $username
+        ]);
     }
-    
+
     /**
+     *
      * @inheritdoc
      */
     public function getId()
     {
         return $this->getPrimaryKey();
     }
-    
+
     /**
+     *
      * @inheritdoc
      */
     public function getAuthKey()
     {
         return $this->auth_key;
     }
-    
+
     /**
+     *
      * @inheritdoc
      */
     public function validateAuthKey($authKey)
     {
         return $this->getAuthKey() === $authKey;
     }
-    
+
     /**
      * Validates password
      *
-     * @param string $password password to validate
+     * @param string $password
+     *            password to validate
      * @return bool if password provided is valid for current user
      */
     public function validatePassword($password)
     {
         return Yii::$app->security->validatePassword($password, $this->pass);
     }
-    
+
     /**
      * Generates password hash from password and sets it to the model
      *
@@ -162,7 +228,7 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     {
         $this->pass = Yii::$app->security->generatePasswordHash($password);
     }
-    
+
     /**
      * Generates "remember me" authentication key
      */
@@ -170,39 +236,50 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     {
         $this->auth_key = Yii::$app->security->generateRandomString();
     }
+
     /**
      * Является ли пользователь администратором.
+     *
      * @return boolean
      * @deprecated 2.0.0
-     * Используется в устаревшем контроле доступа по ролям.
+     *             Используется в устаревшем контроле доступа по ролям.
      */
-    public function isAdmin(){
+    public function isAdmin()
+    {
         return isset($this->getUserRoles()['admin']);
     }
+
     /**
      * Является ли пользователь менеджером.
+     *
      * @return boolean
      * @deprecated 2.0.0
-     * Используется в устаревшем контроле доступа по ролям.
+     *             Используется в устаревшем контроле доступа по ролям.
      */
-    public function isManager(){
+    public function isManager()
+    {
         return isset($this->getUserRoles()['manager']);
     }
+
     /**
-     * Является ли пользователь  рядовым пользователем
+     * Является ли пользователь рядовым пользователем
+     *
      * @return boolean
      * @deprecated 2.0.0
-     * Используется в устаревшем контроле доступа по ролям.
+     *             Используется в устаревшем контроле доступа по ролям.
      */
-    public function isUser(){
+    public function isUser()
+    {
         return isset($this->getUserRoles()['user']);
     }
+
     /**
      * Роли назначенные пользователю.
+     *
      * @return \yii\rbac\Role[]
      */
-    public function getUserRoles(){        
+    public function getUserRoles()
+    {
         return Yii::$app->authManager->getRolesByUser($this->id);
     }
-    
 }

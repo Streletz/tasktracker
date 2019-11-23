@@ -30,6 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [            
             'username',
             'fio',
+            'email',
             ['attribute'=>function($model){                
                 return reset($model->getUserRoles())->description;
             }, 'label'=>'Роль'],      

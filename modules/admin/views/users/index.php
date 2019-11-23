@@ -32,7 +32,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <?=GridView::widget(['dataProvider' => $dataProvider,'filterModel' => $searchModel,
         'columns' => [['class' => 'yii\grid\SerialColumn'],
             ['attribute' => 'username','label' => 'Логин'],
-            ['attribute' => 'fio','label' => 'ФИО'],            
+            ['attribute' => 'fio','label' => 'ФИО'],   
+            ['attribute' => 'email','label' => 'email'], 
             ['attribute' => 'roleName','label' => 'Роль', 'value'=>function($model){
                 return reset($model->getUserRoles())->description;
             }],
