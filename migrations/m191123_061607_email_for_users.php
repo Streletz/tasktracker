@@ -13,10 +13,13 @@ class m191123_061607_email_for_users extends Migration
      */
     public function safeUp()
     {
-        $sql = '
-ALTER TABLE `users` ADD COLUMN `email` varchar(255) NOT NULL DEFAULT \'example@example.com\'
-';
-        $this->execute($sql);
+        // $sql = '
+        // ALTER TABLE `users` ADD COLUMN `email` varchar(255) NOT NULL DEFAULT \'example@example.com\'
+        // ';
+        // $this->execute($sql);
+        $this->addColumn('users', 'email', $this->string(255)
+            ->notNull()
+            ->defaultValue('example@example.com'));
     }
 
     /**
@@ -25,9 +28,9 @@ ALTER TABLE `users` ADD COLUMN `email` varchar(255) NOT NULL DEFAULT \'example@e
      */
     public function safeDown()
     {
-        echo "m191123_061607_email_for_users cannot be reverted.\n";
+        $this->dropColumn('users', 'email');
         
-        return false;
+        // return false;
     }
     
     /*
