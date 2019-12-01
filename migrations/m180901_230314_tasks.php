@@ -56,7 +56,7 @@ class m180901_230314_tasks extends Migration
         // COMMIT;
         // ';
         // $this->execute($sql);
-        $this->createTable(TABLE_NAME, [
+        $this->createTable(self::TABLE_NAME, [
             'id' => $this->primaryKey(11),
             'task_name' => $this->string(256)
                 ->notNull(),
@@ -66,57 +66,59 @@ class m180901_230314_tasks extends Migration
                 ->notNull(),
             'worker_id' => $this->integer(11)
                 ->notNull(),
-            'deadLine_date' => $this->date()
+			'deadLine_date' => $this->date()
                 ->notNull(),
-            'deadLine_date' => $this->date()
+            'start_date' => $this->date()
+                ->defaultValue(null),
+            'end_date' => $this->date()
                 ->defaultValue(null),
             'task_status_id' => $this->integer(11)
                 ->notNull()
                 ->defaultValue(1)
         ]);
-        $this->addForeignKey(`tasks_ibfk_1`, TABLE_NAME, 'task_status_id', 'task_status', 'id', null, 'CASCADE');
-        $this->addForeignKey(`tasks_ibfk_2`, TABLE_NAME, 'creator_id', 'users', 'id', null, 'CASCADE');
-        $this->addForeignKey(`tasks_ibfk_3`, TABLE_NAME, 'worker_id', 'users', 'id', null, 'CASCADE');
-        $this->insert(TABLE_NAME, [
+        $this->addForeignKey('tasks_ibfk_1', self::TABLE_NAME, 'task_status_id', 'task_status', 'id', null, 'CASCADE');
+        $this->addForeignKey('tasks_ibfk_2', self::TABLE_NAME, 'creator_id', 'users', 'id', null, 'CASCADE');
+        $this->addForeignKey('tasks_ibfk_3', self::TABLE_NAME, 'worker_id', 'users', 'id', null, 'CASCADE');
+        $this->insert(self::TABLE_NAME, [
             'id' => 1,
             'task_name' => 'Test',
             'description' => 'Test task',
             'creator_id' => 1,
             'worker_id' => 3,
-            'deadLine_date' => strtotime('08/30/2018'),
+            'deadLine_date' => '2019-12-01',
             'start_date' => null,
             'end_date' => null,
             'task_status_id' => 4
         ]);
-        $this->insert(TABLE_NAME, [
+        $this->insert(self::TABLE_NAME, [
             'id' => 2,
             'task_name' => 'Test',
             'description' => 'Test task 2',
             'creator_id' => 1,
             'worker_id' => 4,
-            'deadLine_date' => strtotime('08/31/2018'),
-            'start_date' => strtotime('08/31/2018'),
+            'deadLine_date' => '2019-12-01',
+            'start_date' => '2019-12-01',
             'end_date' => null,
             'task_status_id' => 2
         ]);
-        $this->insert(TABLE_NAME, [
+        $this->insert(self::TABLE_NAME, [
             'id' => 3,
             'task_name' => 'Test',
             'description' => 'Test task 3',
             'creator_id' => 1,
             'worker_id' => 2,
-            'deadLine_date' => strtotime('08/31/2018'),
+            'deadLine_date' => '2019-12-01',
             'start_date' => null,
             'end_date' => null,
             'task_status_id' => 4
         ]);
-        $this->insert(TABLE_NAME, [
+        $this->insert(self::TABLE_NAME, [
             'id' => 4,
             'task_name' => 'Test',
             'description' => 'Test task 4',
             'creator_id' => 3,
             'worker_id' => 1,
-            'deadLine_date' => strtotime('08/31/2018'),
+            'deadLine_date' => '2019-12-01',
             'start_date' => null,
             'end_date' => null,
             'task_status_id' => 1
@@ -140,7 +142,7 @@ class m180901_230314_tasks extends Migration
         // COMMIT;
         // ';
         // $this->execute($sql);
-        $this->dropTable(TABLE_NAME);
+        $this->dropTable(self::TABLE_NAME);
         
         // return false;
     }

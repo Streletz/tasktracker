@@ -8,7 +8,7 @@ use yii\db\Schema;
 class m180901_230238_task_status extends Migration
 {
 
-    const TABLE_NAME = 'task_status';
+    private static $table_name = 'task_status';
 
     /**
      *
@@ -45,44 +45,44 @@ class m180901_230238_task_status extends Migration
         // COMMIT;
         // ';
         // $this->execute($sql);
-        $this->createTable(TABLE_NAME, [
+        $this->createTable(self::$table_name, [
             'id' => $this->primaryKey(11),
             'status' => $this->string(50)
                 ->notNull(),
             'action_key' => $this->string(15)
                 ->notNull()
         ]);
-        $this->insert(TABLE_NAME, [
+        $this->insert(self::$table_name, [
             'id' => 1,
             'status' => 'Открыто',
             'action_key' => 'open'
         ]);
-        $this->insert(TABLE_NAME, [
+        $this->insert(self::$table_name, [
             'id' => 2,
             'status' => 'В работе',
             'action_key' => 'do'
         ]);
-        $this->insert(TABLE_NAME, [
+        $this->insert(self::$table_name, [
             'id' => 3,
             'status' => 'Выполнено',
             'action_key' => 'success'
         ]);
-        $this->insert(TABLE_NAME, [
+        $this->insert(self::$table_name, [
             'id' => 4,
             'status' => 'Закрыто',
             'action_key' => 'close'
         ]);
-        $this->insert(TABLE_NAME, [
+        $this->insert(self::$table_name, [
             'id' => 5,
             'status' => 'Завершено не успешно',
             'action_key' => 'failed'
         ]);
-        $this->insert(TABLE_NAME, [
+        $this->insert(self::$table_name, [
             'id' => 6,
             'status' => 'Приостановлено',
             'action_key' => 'pause'
         ]);
-        $this->insert(TABLE_NAME, [
+        $this->insert(self::$table_name, [
             'id' => 7,
             'status' => 'Отменено',
             'action_key' => 'cancel'
@@ -106,7 +106,7 @@ DROP TABLE `task_status`;
 COMMIT;
 ';
         // $this->execute($sql);
-        $this->dropTable(TABLE_NAME);
+        $this->dropTable(self::$table_name);
         // return false;
     }
     

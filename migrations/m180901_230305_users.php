@@ -7,7 +7,7 @@ use yii\db\Migration;
 class m180901_230305_users extends Migration
 {
 
-    const TABLE_NAME = 'users';
+    private static $table_name = 'users';
 
     /**
      *
@@ -47,7 +47,7 @@ class m180901_230305_users extends Migration
         // COMMIT;
         
         // ';
-        $this->createTable(TABLE_NAME, [
+        $this->createTable(self::$table_name, [
             'id' => $this->primaryKey(11),
             'username' => $this->string(50)
                 ->notNull(),
@@ -59,28 +59,28 @@ class m180901_230305_users extends Migration
                 ->notNull()
         
         ]);
-        $this->insert(TABLE_NAME, [
+        $this->insert(self::$table_name, [
             'id' => 1,
             'username' => 'admin',
             'fio' => 'Администратор',
             'pass' => '$2y$13$YVxzIP/77yv8N5c7xMfIYeuv3sojCQZyGxy4OS4zutYIWuYRc8pB2',
             'auth_key' => ''
         ]);
-        $this->insert(TABLE_NAME, [
+        $this->insert(self::$table_name, [
             'id' => 2,
             'username' => 'manager',
             'fio' => 'Менеджер',
             'pass' => '$2y$13$jzS.zVPI3jEMVeh1LS9KXuAjD1vHzJhYZX7xit605HZBrEM8c0ROe',
             'auth_key' => ''
         ]);
-        $this->insert(TABLE_NAME, [
+        $this->insert(self::$table_name, [
             'id' => 3,
             'username' => 'user',
             'fio' => 'Пользователь',
             'pass' => '$2y$13$TbZc7gKbfW3HCJJVAgYvA.0nHQiMoVLkrukbgxgWWPaOAViypuzIS',
             'auth_key' => ''
         ]);
-        $this->insert(TABLE_NAME, [
+        $this->insert(self::$table_name, [
             'id' => 4,
             'username' => 'test',
             'fio' => 'Тестовый',
@@ -108,7 +108,7 @@ class m180901_230305_users extends Migration
         // COMMIT;
         // ';
         // $this->execute($sql);
-        $this->dropTable(TABLE_NAME);
+        $this->dropTable(self::$table_name);
         // return false;
     }
     
