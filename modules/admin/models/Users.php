@@ -115,6 +115,17 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             'creator_id' => 'id'
         ]);
     }
+    
+	/**
+	*
+	* @return \yii\db\ActiveQuery
+	*/
+	public function getSettings()
+	{
+		return $this->hasMany(Settings::className(), [
+			'creator_id' => 'id'
+		]);
+	}
 
     /**
      *
