@@ -35,8 +35,8 @@ class Notificator extends Component
 			->setSubject($subject)
 			->setTextBody($body)
 			->send();
-		} catch (Exception $ex){
-			Yii::error($ex->message ,__METHOD__);
+		} catch (\Swift_TransportException $ex) {
+			Yii::error($ex->getMessage() ,__METHOD__);
 		}
     }
 }
