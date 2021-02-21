@@ -5,6 +5,7 @@ use Yii;
 use app\modules\tasks\models\Tasks;
 use app\modules\tasks\models\SearchTasks;
 use app\modules\admin\models\Users;
+use app\modules\admin\models\Settings;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -127,9 +128,11 @@ class TasksController extends Controller
         
         if ($model->load(Yii::$app->request->post())) {
             $model->creator_id = Yii::$app->user->identity->getId();
-            if ($model->save()) {
-                Yii::$app->notificator->email($model->creator->email, "Новая задача", "Задача \"" . $model->task_name . "\" создана.");
-                Yii::$app->notificator->email($model->worker->email, "Новая задача", "Задача \"" . $model->task_name . "\" создана и назначена Вам.");
+			if ($model->save()) {
+				if ($this->isEmailNotificationActive()) {
+					Yii::$app->notificator->email($model->creator->email, "Новая задача", "Задача \"" . $model->task_name . "\" создана.");
+					Yii::$app->notificator->email($model->worker->email, "Новая задача", "Задача \"" . $model->task_name . "\" создана и назначена Вам.");
+				}
                 return $this->redirect([
                     'view',
                     'id' => $model->id
@@ -159,9 +162,11 @@ class TasksController extends Controller
     {
         $model = $this->findModel($id);
         
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->notificator->email($model->creator->email, "Задача обновлена", "Задача \"" . $model->task_name . "\" обновленаа.");
-            Yii::$app->notificator->email($model->worker->email, "Задача обновлена", "Задача \"" . $model->task_name . "\" обновлена.");
+		if ($model->load(Yii::$app->request->post()) && $model->save()) {
+			if ($this->isEmailNotificationActive()) {
+				Yii::$app->notificator->email($model->creator->email, "Задача обновлена", "Задача \"" . $model->task_name . "\" обновленаа.");
+				Yii::$app->notificator->email($model->worker->email, "Задача обновлена", "Задача \"" . $model->task_name . "\" обновлена.");
+			}
             return $this->redirect([
                 'view',
                 'id' => $model->id
@@ -188,8 +193,10 @@ class TasksController extends Controller
     {
         $model = $this->findModel($id);
         $model->delete();
-        Yii::$app->notificator->email($model->creator->email, "Задача удалена", "Задача \"" . $model->task_name . "\" удалена.");
-        Yii::$app->notificator->email($model->worker->email, "Задача удалена", "Задача \"" . $model->task_name . "\" удалена.");
+		if ($this->isEmailNotificationActive()) {
+			Yii::$app->notificator->email($model->creator->email, "Задача удалена", "Задача \"" . $model->task_name . "\" удалена.");
+			Yii::$app->notificator->email($model->worker->email, "Задача удалена", "Задача \"" . $model->task_name . "\" удалена.");
+		}
         return $this->redirect([
             'index'
         ]);
@@ -273,5 +280,13 @@ class TasksController extends Controller
         }
         
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+    
+    protected function isEmailNotificationActive(){
+		$settingsModel=Settings::find()->one();		
+		if ($settingsModel!=null) {
+			return $settingsModel->email_notyfy;
+		}
+		throw new ServerErrorHttpException("Ошибка настроек приложения."); 
     }
 }
