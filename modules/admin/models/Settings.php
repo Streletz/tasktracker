@@ -8,7 +8,8 @@ use Yii;
 * This is the model class for table "settings".
 *
 * @property int $id
-* @property bool $email_notyfy
+* @property bool $email_notify
+* @property bool $can_set_myself_task
 * @property int $creator_id
 *
 * @property Users $creator
@@ -29,7 +30,8 @@ class Settings extends \yii\db\ActiveRecord
 	public function rules()
 	{
 		return [
-			[['email_notyfy'], 'boolean'],
+			[['email_notify'], 'boolean'],
+			[['can_set_myself_task'], 'boolean'],
 			[['creator_id'], 'required'],
 			[['creator_id'], 'default', 'value' => null],
 			[['creator_id'], 'integer'],
@@ -44,7 +46,8 @@ class Settings extends \yii\db\ActiveRecord
 	{
 		return [
 			'id' => 'ID',
-			'email_notyfy' => 'Уведомления по email',
+			'email_notify' => 'Уведомления по email',
+			'can_set_myself_task' => 'Разрешить ставить задачи самим себе',
 			'creator_id' => 'Создал',
 		];
 	}

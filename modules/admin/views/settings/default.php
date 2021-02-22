@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	<h1><?= Html::encode($this->title) ?></h1>
 
 	<p>
-		<?= Html::a('Редактировать', ['updateDefault', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+		<?= Html::a('Редактировать', ['update-default', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
 		<?php
 		// Временно отключаем кнопку удаления, т.к. пользовательские настройки пока не поддерживаются.
 		/*Html::a('Delete', ['delete', 'id' => $model->id], [
@@ -30,7 +30,8 @@ $this->params['breadcrumbs'][] = $this->title;
 	<?= DetailView::widget([
 		'model' => $model,
 		'attributes' => [			
-			'email_notyfy:boolean',
+			'email_notify:boolean',
+			'can_set_myself_task:boolean',
 			['attribute' =>'creator.fio', 'label'=>'Создал'],
 		],
 	]) ?>

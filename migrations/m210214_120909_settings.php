@@ -15,16 +15,18 @@ class m210214_120909_settings extends Migration
     {
 		$this->createTable(self::TABLE_NAME, [
 			'id' => $this->primaryKey(11),			
-			'email_notyfy' => $this->boolean()
+			'email_notify' => $this->boolean()
+			->notNull()
+			->defaultValue(true),
+			'can_set_myself_task' => $this->boolean()
 			->notNull()
 			->defaultValue(true),
 			'creator_id' => $this->integer(11)
 			->notNull()
 		]);
 		$this->addForeignKey('tasks_ibfk_2', self::TABLE_NAME, 'creator_id', 'users', 'id', null, 'CASCADE');
-		$this->insert(self::TABLE_NAME, [
-			'id' => 1,
-			'email_notyfy' => true,			
+		$this->insert(self::TABLE_NAME, [			
+			'email_notify' => true,			
 			'creator_id' => 1
 		]);
     }

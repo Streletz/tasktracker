@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'email_notyfy:boolean',
+            'email_notify:boolean',
             'creator_id',
         ],
     ]) ?>

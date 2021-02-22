@@ -12,7 +12,9 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'email_notyfy')->checkbox() ?>
+    <?= $form->field($model, 'email_notify')->checkbox() ?>
+    
+	<?= $form->field($model, 'can_set_myself_task')->checkbox() ?>
 
     <?= $form->field($model, 'creator_id')->hiddenInput() ?>
 

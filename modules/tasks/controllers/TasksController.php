@@ -285,7 +285,7 @@ class TasksController extends Controller
     protected function isEmailNotificationActive(){
 		$settingsModel=Settings::find()->one();		
 		if ($settingsModel!=null) {
-			return $settingsModel->email_notyfy;
+			return $settingsModel->email_notify;
 		}
 		throw new ServerErrorHttpException("Ошибка настроек приложения."); 
     }
