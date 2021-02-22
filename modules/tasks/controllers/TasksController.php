@@ -124,8 +124,7 @@ class TasksController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Tasks();
-        
+        $model = new Tasks();		
         if ($model->load(Yii::$app->request->post())) {
             $model->creator_id = Yii::$app->user->identity->getId();
 			if ($model->save()) {
@@ -161,7 +160,7 @@ class TasksController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        
+		
 		if ($model->load(Yii::$app->request->post()) && $model->save()) {
 			if ($this->isEmailNotificationActive()) {
 				Yii::$app->notificator->email($model->creator->email, "Задача обновлена", "Задача \"" . $model->task_name . "\" обновленаа.");
@@ -175,6 +174,7 @@ class TasksController extends Controller
         $workers = Users::find()->orderBy([
             'fio' => SORT_ASC
         ])->all();
+		Yii::$app->debugUtils->printDebug($model);
         return $this->render('update', [
             'model' => $model,
             'workers' => $workers

@@ -45,7 +45,7 @@ $config = [
         ],
         'notificator' => [
             'class' => 'app\components\Notificator'
-        ],
+        ],		
         'errorHandler' => [
             'errorAction' => 'site/error'
         ],

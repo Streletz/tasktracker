@@ -33,29 +33,25 @@ class m180901_230305_users extends Migration
                 ->notNull()
         
         ]);
-        $this->insert(self::$table_name, [
-            'id' => 1,
+        $this->insert(self::$table_name, [            
             'username' => 'admin',
             'fio' => 'Администратор',
             'pass' => '$2y$13$YVxzIP/77yv8N5c7xMfIYeuv3sojCQZyGxy4OS4zutYIWuYRc8pB2',
             'auth_key' => ''
         ]);
-        $this->insert(self::$table_name, [
-            'id' => 2,
+        $this->insert(self::$table_name, [            
             'username' => 'manager',
             'fio' => 'Менеджер',
             'pass' => '$2y$13$jzS.zVPI3jEMVeh1LS9KXuAjD1vHzJhYZX7xit605HZBrEM8c0ROe',
             'auth_key' => ''
         ]);
-        $this->insert(self::$table_name, [
-            'id' => 3,
+        $this->insert(self::$table_name, [            
             'username' => 'user',
             'fio' => 'Пользователь',
             'pass' => '$2y$13$TbZc7gKbfW3HCJJVAgYvA.0nHQiMoVLkrukbgxgWWPaOAViypuzIS',
             'auth_key' => ''
         ]);
-        $this->insert(self::$table_name, [
-            'id' => 4,
+        $this->insert(self::$table_name, [           
             'username' => 'test',
             'fio' => 'Тестовый',
             'pass' => '$2y$13$S2LOAFPHZnS93A9u5vpnOeAy8UWMm34DPohmFke3.60xPfgiYY/Mu',
