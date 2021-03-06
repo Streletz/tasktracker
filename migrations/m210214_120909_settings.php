@@ -24,7 +24,7 @@ class m210214_120909_settings extends Migration
 			'creator_id' => $this->integer(11)
 			->notNull()
 		]);
-		$this->addForeignKey('tasks_ibfk_2', self::TABLE_NAME, 'creator_id', 'users', 'id', null, 'CASCADE');
+		$this->addForeignKey('settings_creator_fk', self::TABLE_NAME, 'creator_id', 'users', 'id', null, 'CASCADE');
 		$this->insert(self::TABLE_NAME, [			
 			'email_notify' => true,			
 			'creator_id' => 1
