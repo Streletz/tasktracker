@@ -11,6 +11,11 @@
  <removed value=";D:\OpenServer\domains\tasktracker\components\DebugUtils.php;"/>
  <added value=""/>
  <lastopfiles>
+  <file name="D:\OpenServer\domains\tasktracker\web\index.php"/>
+  <file name="D:\OpenServer\domains\tasktracker\views\layouts\main.php"/>
+  <file name="D:\OpenServer\domains\tasktracker\config\web.php"/>
+  <file name="D:\OpenServer\domains\tasktracker\README.md"/>
+  <file name="D:\OpenServer\domains\tasktracker\config\params.php"/>
   <lastactivefile name=""/>
  </lastopfiles>
  <errors version="1.10">
@@ -51,267 +56,267 @@
  <yiidata/>
  <todoblock>
   <todofile name="D:\OpenServer\domains\tasktracker\migrations\m180901_230314_tasks.php">
-   <todo pos="32;39" name="todo.\', 3, 1, \'2018-12-31\', NULL, NULL, 1);"/>
+   <todo name="todo.\', 3, 1, \'2018-12-31\', NULL, NULL, 1);" pos="32;39"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\bower-asset\bootstrap\Gruntfile.js">
-   <todo pos="9;228" name="TODO: disable `zeroUnits` optimization once clean-css 3.2 is released"/>
+   <todo name="TODO: disable `zeroUnits` optimization once clean-css 3.2 is released" pos="9;228"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\bower-asset\bootstrap\dist\js\bootstrap.js">
-   <todo pos="28;1575" name="TODO: Check whether guarding this code with this `if` is really necessary."/>
+   <todo name="TODO: Check whether guarding this code with this `if` is really necessary." pos="28;1575"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\bower-asset\bootstrap\docs\assets\js\vendor\autoprefixer.js">
-   <todo pos="3;5709" name="TODO: make this comparison case-insensitive on windows?"/>
-   <todo pos="1;5793" name="TODO(shtylman)"/>
+   <todo name="TODO: make this comparison case-insensitive on windows?" pos="3;5709"/>
+   <todo name="TODO(shtylman)" pos="1;5793"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\bower-asset\bootstrap\docs\dist\js\bootstrap.js">
-   <todo pos="28;1575" name="TODO: Check whether guarding this code with this `if` is really necessary."/>
+   <todo name="TODO: Check whether guarding this code with this `if` is really necessary." pos="28;1575"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\bower-asset\bootstrap\js\tooltip.js">
-   <todo pos="28;319" name="TODO: Check whether guarding this code with this `if` is really necessary."/>
+   <todo name="TODO: Check whether guarding this code with this `if` is really necessary." pos="28;319"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\bower-asset\inputmask\js\inputmask.numeric.extensions.js">
-   <todo pos="128;344" name="TODO needs fix for MIN_VALUE &amp; MAX_VALUE"/>
-   <todo pos="128;351" name="TODO needs fix for MIN_VALUE &amp; MAX_VALUE"/>
-   <todo pos="17;582" name="TODO FIXME"/>
+   <todo name="TODO needs fix for MIN_VALUE &amp; MAX_VALUE" pos="128;344"/>
+   <todo name="TODO needs fix for MIN_VALUE &amp; MAX_VALUE" pos="128;351"/>
+   <todo name="TODO FIXME" pos="17;582"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\bower-asset\jquery\dist\jquery.js">
-   <todo pos="8;791" name="TODO: identify versions"/>
-   <todo pos="7;805" name="TODO: identify versions"/>
-   <todo pos="48;4190" name="TODO: Drop _data, _removeData)"/>
-   <todo pos="2;4258" name="TODO: Now that all calls to _data and _removeData have been replaced"/>
+   <todo name="TODO: identify versions" pos="8;791"/>
+   <todo name="TODO: identify versions" pos="7;805"/>
+   <todo name="TODO: Drop _data, _removeData)" pos="48;4190"/>
+   <todo name="TODO: Now that all calls to _data and _removeData have been replaced" pos="2;4258"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\bower-asset\jquery\dist\jquery.slim.js">
-   <todo pos="8;791" name="TODO: identify versions"/>
-   <todo pos="7;805" name="TODO: identify versions"/>
-   <todo pos="48;4190" name="TODO: Drop _data, _removeData)"/>
-   <todo pos="2;4258" name="TODO: Now that all calls to _data and _removeData have been replaced"/>
+   <todo name="TODO: identify versions" pos="8;791"/>
+   <todo name="TODO: identify versions" pos="7;805"/>
+   <todo name="TODO: Drop _data, _removeData)" pos="48;4190"/>
+   <todo name="TODO: Now that all calls to _data and _removeData have been replaced" pos="2;4258"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\bower-asset\jquery\external\sizzle\dist\sizzle.js">
-   <todo pos="8;253" name="TODO: identify versions"/>
-   <todo pos="7;267" name="TODO: identify versions"/>
+   <todo name="TODO: identify versions" pos="8;253"/>
+   <todo name="TODO: identify versions" pos="7;267"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\bower-asset\jquery\src\data.js">
-   <todo pos="48;15" name="TODO: Drop _data, _removeData)"/>
-   <todo pos="2;83" name="TODO: Now that all calls to _data and _removeData have been replaced"/>
+   <todo name="TODO: Drop _data, _removeData)" pos="48;15"/>
+   <todo name="TODO: Now that all calls to _data and _removeData have been replaced" pos="2;83"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\bower-asset\typeahead.js\src\bloodhound\bloodhound.js">
-   <todo pos="5;120" name="TODO: before initialize what happens?"/>
+   <todo name="TODO: before initialize what happens?" pos="5;120"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\bower-asset\typeahead.js\src\bloodhound\prefetch.js">
-   <todo pos="7;66" name="TODO: if expired, remove from local storage"/>
+   <todo name="TODO: if expired, remove from local storage" pos="7;66"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\bower-asset\typeahead.js\src\typeahead\event_bus.js">
-   <todo pos="7;69" name="TODO: remove in v1"/>
+   <todo name="TODO: remove in v1" pos="7;69"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\bower-asset\yii2-pjax\vendor\jquery-1.12.js">
-   <todo pos="8;809" name="TODO: identify versions"/>
-   <todo pos="7;823" name="TODO: identify versions"/>
+   <todo name="TODO: identify versions" pos="8;809"/>
+   <todo name="TODO: identify versions" pos="7;823"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\bower-asset\yii2-pjax\vendor\jquery-2.2.js">
-   <todo pos="8;775" name="TODO: identify versions"/>
-   <todo pos="7;789" name="TODO: identify versions"/>
-   <todo pos="48;3862" name="TODO: Drop _data, _removeData)"/>
-   <todo pos="2;3912" name="TODO: Now that all calls to _data and _removeData have been replaced"/>
+   <todo name="TODO: identify versions" pos="8;775"/>
+   <todo name="TODO: identify versions" pos="7;789"/>
+   <todo name="TODO: Drop _data, _removeData)" pos="48;3862"/>
+   <todo name="TODO: Now that all calls to _data and _removeData have been replaced" pos="2;3912"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\bower-asset\yii2-pjax\vendor\jquery-3.2.js">
-   <todo pos="8;791" name="TODO: identify versions"/>
-   <todo pos="7;805" name="TODO: identify versions"/>
-   <todo pos="48;4190" name="TODO: Drop _data, _removeData)"/>
-   <todo pos="2;4258" name="TODO: Now that all calls to _data and _removeData have been replaced"/>
+   <todo name="TODO: identify versions" pos="8;791"/>
+   <todo name="TODO: identify versions" pos="7;805"/>
+   <todo name="TODO: Drop _data, _removeData)" pos="48;4190"/>
+   <todo name="TODO: Now that all calls to _data and _removeData have been replaced" pos="2;4258"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\bower-asset\yii2-pjax\vendor\qunit.js">
-   <todo pos="3;151" name="TODO why??"/>
+   <todo name="TODO why??" pos="3;151"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\cebe\markdown\MarkdownExtra.php">
-   <todo pos="2;23" name="TODO"/>
-   <todo pos="2;56" name="TODO allow HTML intended 3 spaces"/>
-   <todo pos="2;58" name="TODO add markdown inside HTML blocks"/>
-   <todo pos="2;60" name="TODO implement definition lists"/>
-   <todo pos="2;62" name="TODO implement footnotes"/>
-   <todo pos="2;64" name="TODO implement Abbreviations"/>
+   <todo name="TODO" pos="2;23"/>
+   <todo name="TODO allow HTML intended 3 spaces" pos="2;56"/>
+   <todo name="TODO add markdown inside HTML blocks" pos="2;58"/>
+   <todo name="TODO implement definition lists" pos="2;60"/>
+   <todo name="TODO implement footnotes" pos="2;62"/>
+   <todo name="TODO implement Abbreviations" pos="2;64"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\cebe\markdown\Parser.php">
-   <todo pos="2;24" name="TODO remove in favor of absy"/>
+   <todo name="TODO remove in favor of absy" pos="2;24"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\cebe\markdown\block\TableTrait.php">
-   <todo pos="123;95" name="TODO move this to the consume step"/>
-   <todo pos="131;114" name="TODO make a absy node"/>
+   <todo name="TODO move this to the consume step" pos="123;95"/>
+   <todo name="TODO make a absy node" pos="131;114"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\cebe\markdown\inline\LinkTrait.php">
-   <todo pos="112;123" name="TODO improve bracket regex"/>
+   <todo name="TODO improve bracket regex" pos="112;123"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\codeception\base\src\Codeception\Lib\Driver\Facebook.php">
-   <todo pos="52;52" name="TODO add to config"/>
+   <todo name="TODO add to config" pos="52;52"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\codeception\base\src\Codeception\Util\Autoload.php">
-   <todo pos="10;116" name="TODO: it should be removed"/>
+   <todo name="TODO: it should be removed" pos="10;116"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\codeception\base\tests\cli\ExceptionInBeforeDoesNotMakeFatalErrorCept.php">
-   <todo pos="2;11" name="todo if Unit format is ever fixed in PHPUnit, uncomment these lines"/>
-   <todo pos="1;11" name="@todo if Unit format is ever fixed in PHPUnit, uncomment these lines"/>
+   <todo name="todo if Unit format is ever fixed in PHPUnit, uncomment these lines" pos="2;11"/>
+   <todo name="@todo if Unit format is ever fixed in PHPUnit, uncomment these lines" pos="1;11"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\codeception\base\tests\unit\Codeception\Module\Db\TestsForDb.php">
-   <todo pos="9;89" name="TODO: Catch this exception at the driver level and re-throw a general one"/>
+   <todo name="TODO: Catch this exception at the driver level and re-throw a general one" pos="9;89"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\ezyang\htmlpurifier\library\HTMLPurifier.php">
-   <todo pos="10;147" name="TODO: make the config merge in, instead of replace"/>
+   <todo name="TODO: make the config merge in, instead of replace" pos="10;147"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\ezyang\htmlpurifier\library\HTMLPurifier\AttrDef\CSS\ImportantDecorator.php">
-   <todo pos="10;38" name="TODO: optimization: test directly for !important and ! important"/>
+   <todo name="TODO: optimization: test directly for !important and ! important" pos="10;38"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\ezyang\htmlpurifier\library\HTMLPurifier\CSSDefinition.php">
-   <todo pos="9;386" name="TODO: support SLASH syntax"/>
-   <todo pos="18;473" name="TODO: Is this htmlspecialchars() call really necessary"/>
+   <todo name="TODO: support SLASH syntax" pos="9;386"/>
+   <todo name="TODO: Is this htmlspecialchars() call really necessary" pos="18;473"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\ezyang\htmlpurifier\library\HTMLPurifier\ChildDef\List.php">
-   <todo pos="17;68" name="ToDo: Make this more robust in the case of not ol/ul"/>
-   <todo pos="93;78" name="ToDo"/>
+   <todo name="ToDo: Make this more robust in the case of not ol/ul" pos="17;68"/>
+   <todo name="ToDo" pos="93;78"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\ezyang\htmlpurifier\library\HTMLPurifier\ChildDef\Required.php">
-   <todo pos="17;95" name="ToDo: Make configurable"/>
+   <todo name="ToDo: Make configurable" pos="17;95"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\ezyang\htmlpurifier\library\HTMLPurifier\HTMLModuleManager.php">
-   <todo pos="18;421" name="TODO:"/>
+   <todo name="TODO:" pos="18;421"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\ezyang\htmlpurifier\library\HTMLPurifier\HTMLModule\Scripting.php">
-   <todo pos="9;42" name="TODO: create custom child-definition for noscript that"/>
-   <todo pos="9;48" name="TODO: convert this to new syntax, main problem is getting"/>
+   <todo name="TODO: create custom child-definition for noscript that" pos="9;42"/>
+   <todo name="TODO: convert this to new syntax, main problem is getting" pos="9;48"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\ezyang\htmlpurifier\library\HTMLPurifier\Printer\ConfigForm.php">
-   <todo pos="21;322" name="TODO does this need a break"/>
+   <todo name="TODO does this need a break" pos="21;322"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\ezyang\htmlpurifier\library\HTMLPurifier\Strategy\FixNesting.php">
-   <todo pos="25;121" name="ToDo: I don't think it matters if it's def or"/>
+   <todo name="ToDo: I don't think it matters if it's def or" pos="25;121"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\ezyang\htmlpurifier\library\HTMLPurifier\Zipper.php">
-   <todo pos="34;13" name="ToDo: Maybe it's more user friendly"/>
+   <todo name="ToDo: Maybe it's more user friendly" pos="34;13"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\fzaninotto\faker\src\Faker\ORM\CakePHP\EntityPopulator.php">
-   <todo pos="9;117" name="TODO check if TreeBehavior attached to modify lft/rgt cols"/>
+   <todo name="TODO check if TreeBehavior attached to modify lft/rgt cols" pos="9;117"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\fzaninotto\faker\src\Faker\Provider\Base.php">
-   <todo pos="9;547" name="TODO: remove in v2"/>
+   <todo name="TODO: remove in v2" pos="9;547"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\fzaninotto\faker\src\Faker\Provider\kk_KZ\Address.php">
-   <todo pos="5;15" name="TODO list all country names in the world"/>
+   <todo name="TODO list all country names in the world" pos="5;15"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\guzzlehttp\psr7\src\BufferStream.php">
-   <todo pos="9;120" name="TODO: What should happen here"/>
+   <todo name="TODO: What should happen here" pos="9;120"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\phpdocumentor\reflection-docblock\src\DocBlock\StandardTagFactory.php">
-   <todo pos="13;218" name="TODO: Annotation support is planned for a later stage and as such is disabled for now"/>
+   <todo name="TODO: Annotation support is planned for a later stage and as such is disabled for now" pos="13;218"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\phpunit\phpunit\src\Util\Configuration.php">
-   <todo pos="24;43" name="TodoAnnotatedTests=&quot;false&quot;"/>
+   <todo name="TodoAnnotatedTests=&quot;false&quot;" pos="24;43"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\phpunit\phpunit\tests\Util\TestTest.php">
-   <todo pos="9;404" name="TODO Remove fixture from test class"/>
+   <todo name="TODO Remove fixture from test class" pos="9;404"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\swiftmailer\swiftmailer\lib\classes\Swift\Mime\Headers\ParameterizedHeader.php">
-   <todo pos="36;129" name="TODO: Check caching here"/>
-   <todo pos="13;189" name="TODO: text, or something else"/>
+   <todo name="TODO: Check caching here" pos="36;129"/>
+   <todo name="TODO: text, or something else" pos="13;189"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\swiftmailer\swiftmailer\lib\classes\Swift\Mime\SimpleMimeEntity.php">
-   <todo pos="9;282" name="TODO: Try to refactor this logic"/>
+   <todo name="TODO: Try to refactor this logic" pos="9;282"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\swiftmailer\swiftmailer\lib\classes\Swift\Signers\DKIMSigner.php">
-   <todo pos="5;232" name="TODO fix return"/>
-   <todo pos="25;631" name="todo handle it but should never happen"/>
+   <todo name="TODO fix return" pos="5;232"/>
+   <todo name="todo handle it but should never happen" pos="25;631"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\swiftmailer\swiftmailer\lib\classes\Swift\Transport\StreamBuffer.php">
-   <todo pos="10;96" name="TODO make tls arguments configurable"/>
-   <todo pos="9;96" name="@TODO make tls arguments configurable"/>
+   <todo name="TODO make tls arguments configurable" pos="10;96"/>
+   <todo name="@TODO make tls arguments configurable" pos="9;96"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\swiftmailer\swiftmailer\tests\acceptance\Swift\Mime\SimpleMessageAcceptanceTest.php">
-   <todo pos="61;6" name="TODO: Test with the charset defined"/>
+   <todo name="TODO: Test with the charset defined" pos="61;6"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\symfony\css-selector\XPath\Extension\FunctionExtension.php">
-   <todo pos="9;103" name="todo: handle an+b, odd, even"/>
+   <todo name="todo: handle an+b, odd, even" pos="9;103"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\symfony\css-selector\XPath\Extension\HtmlExtension.php">
-   <todo pos="9;111" name="todo: in the second half, add &quot;and is not a descendant of that fieldset element's first legend elem"/>
+   <todo name="todo: in the second half, add &quot;and is not a descendant of that fieldset element's first legend elem" pos="9;111"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\symfony\yaml\Tests\DumperTest.php">
-   <todo pos="21;124" name="TODO"/>
+   <todo name="TODO" pos="21;124"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\symfony\yaml\Tests\ParserTest.php">
-   <todo pos="21;1910" name="TODO"/>
+   <todo name="TODO" pos="21;1910"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\yiisoft\yii2-bootstrap\src\ButtonDropdown.php">
-   <todo pos="10;82" name="todo use [[options]] instead of [[containerOptions]] and introduce [[buttonOptions]] before 2.1 re"/>
-   <todo pos="9;82" name="@todo use [[options]] instead of [[containerOptions]] and introduce [[buttonOptions]] before 2.1 re"/>
+   <todo name="todo use [[options]] instead of [[containerOptions]] and introduce [[buttonOptions]] before 2.1 re" pos="10;82"/>
+   <todo name="@todo use [[options]] instead of [[containerOptions]] and introduce [[buttonOptions]] before 2.1 re" pos="9;82"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\yiisoft\yii2-bootstrap\src\Dropdown.php">
-   <todo pos="14;75" name="todo separate [[submenuOptions]] from [[options]] completely before 2.1 release"/>
-   <todo pos="13;75" name="@todo separate [[submenuOptions]] from [[options]] completely before 2.1 release"/>
+   <todo name="todo separate [[submenuOptions]] from [[options]] completely before 2.1 release" pos="14;75"/>
+   <todo name="@todo separate [[submenuOptions]] from [[options]] completely before 2.1 release" pos="13;75"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\yiisoft\yii2-gii\src\generators\model\Generator.php">
-   <todo pos="10;173" name="todo make 'query.php' to be required before 2.1 release"/>
-   <todo pos="9;173" name="@todo make 'query.php' to be required before 2.1 release"/>
+   <todo name="todo make 'query.php' to be required before 2.1 release" pos="10;173"/>
+   <todo name="@todo make 'query.php' to be required before 2.1 release" pos="9;173"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\yiisoft\yii2\assets\yii.activeForm.js">
-   <todo pos="9;680" name="TODO: if the submission is caused by &quot;change&quot; event, it will not work"/>
+   <todo name="TODO: if the submission is caused by &quot;change&quot; event, it will not work" pos="9;680"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\yiisoft\yii2\base\Security.php">
-   <todo pos="9;341" name="todo: is there a nice way to reduce the code repetition in hkdf() and pbkdf2()"/>
+   <todo name="todo: is there a nice way to reduce the code repetition in hkdf() and pbkdf2()" pos="9;341"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\yiisoft\yii2\base\View.php">
-   <todo pos="17;401" name="TODO: Remove in 2.1"/>
+   <todo name="TODO: Remove in 2.1" pos="17;401"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\yiisoft\yii2\db\Command.php">
-   <todo pos="37;361" name="TODO: Drop in Yii 2.1"/>
+   <todo name="TODO: Drop in Yii 2.1" pos="37;361"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\yiisoft\yii2\db\Connection.php">
-   <todo pos="13;1066" name="TODO: use &quot;finally&quot; keyword when miminum required PHP version is >= 5.5"/>
+   <todo name="TODO: use &quot;finally&quot; keyword when miminum required PHP version is >= 5.5" pos="13;1066"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\yiisoft\yii2\db\conditions\ConjunctionCondition.php">
-   <todo pos="47;26" name="TODO: use variadic params when PHP>5.6"/>
+   <todo name="TODO: use variadic params when PHP>5.6" pos="47;26"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\yiisoft\yii2\helpers\BaseConsole.php">
-   <todo pos="9;507" name="TODO rework/refactor according to https://github.com/yiisoft/yii2/issues/746"/>
-   <todo pos="9;571" name="TODO rework/refactor according to https://github.com/yiisoft/yii2/issues/746"/>
+   <todo name="TODO rework/refactor according to https://github.com/yiisoft/yii2/issues/746" pos="9;507"/>
+   <todo name="TODO rework/refactor according to https://github.com/yiisoft/yii2/issues/746" pos="9;571"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\yiisoft\yii2\validators\DateValidator.php">
-   <todo pos="9;327" name="TODO consider merging these methods into single one at 2.1"/>
+   <todo name="TODO consider merging these methods into single one at 2.1" pos="9;327"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\yiisoft\yii2\validators\EmailValidator.php">
-   <todo pos="13;110" name="TODO: drop old PHP versions support"/>
+   <todo name="TODO: drop old PHP versions support" pos="13;110"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\vendor\yiisoft\yii2\validators\UrlValidator.php">
-   <todo pos="13;113" name="TODO: drop old PHP versions support"/>
+   <todo name="TODO: drop old PHP versions support" pos="13;113"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\web\assets\193bbd25\yii.activeForm.js">
-   <todo pos="9;680" name="TODO: if the submission is caused by &quot;change&quot; event, it will not work"/>
+   <todo name="TODO: if the submission is caused by &quot;change&quot; event, it will not work" pos="9;680"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\web\assets\35d0d4c7\yii.activeForm.js">
-   <todo pos="9;680" name="TODO: if the submission is caused by &quot;change&quot; event, it will not work"/>
+   <todo name="TODO: if the submission is caused by &quot;change&quot; event, it will not work" pos="9;680"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\web\assets\58d52320\js\bootstrap.js">
-   <todo pos="28;1575" name="TODO: Check whether guarding this code with this `if` is really necessary."/>
+   <todo name="TODO: Check whether guarding this code with this `if` is really necessary." pos="28;1575"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\web\assets\eb1ad747\jquery.js">
-   <todo pos="8;791" name="TODO: identify versions"/>
-   <todo pos="7;805" name="TODO: identify versions"/>
-   <todo pos="48;4190" name="TODO: Drop _data, _removeData)"/>
-   <todo pos="2;4258" name="TODO: Now that all calls to _data and _removeData have been replaced"/>
+   <todo name="TODO: identify versions" pos="8;791"/>
+   <todo name="TODO: identify versions" pos="7;805"/>
+   <todo name="TODO: Drop _data, _removeData)" pos="48;4190"/>
+   <todo name="TODO: Now that all calls to _data and _removeData have been replaced" pos="2;4258"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\web\assets\eb1ad747\jquery.slim.js">
-   <todo pos="8;791" name="TODO: identify versions"/>
-   <todo pos="7;805" name="TODO: identify versions"/>
-   <todo pos="48;4190" name="TODO: Drop _data, _removeData)"/>
-   <todo pos="2;4258" name="TODO: Now that all calls to _data and _removeData have been replaced"/>
+   <todo name="TODO: identify versions" pos="8;791"/>
+   <todo name="TODO: identify versions" pos="7;805"/>
+   <todo name="TODO: Drop _data, _removeData)" pos="48;4190"/>
+   <todo name="TODO: Now that all calls to _data and _removeData have been replaced" pos="2;4258"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\web\assets\fa6a4aaf\jquery.js">
-   <todo pos="8;791" name="TODO: identify versions"/>
-   <todo pos="7;805" name="TODO: identify versions"/>
-   <todo pos="48;4190" name="TODO: Drop _data, _removeData)"/>
-   <todo pos="2;4258" name="TODO: Now that all calls to _data and _removeData have been replaced"/>
+   <todo name="TODO: identify versions" pos="8;791"/>
+   <todo name="TODO: identify versions" pos="7;805"/>
+   <todo name="TODO: Drop _data, _removeData)" pos="48;4190"/>
+   <todo name="TODO: Now that all calls to _data and _removeData have been replaced" pos="2;4258"/>
   </todofile>
   <todofile name="D:\OpenServer\domains\tasktracker\web\assets\fa6a4aaf\jquery.slim.js">
-   <todo pos="8;791" name="TODO: identify versions"/>
-   <todo pos="7;805" name="TODO: identify versions"/>
-   <todo pos="48;4190" name="TODO: Drop _data, _removeData)"/>
-   <todo pos="2;4258" name="TODO: Now that all calls to _data and _removeData have been replaced"/>
+   <todo name="TODO: identify versions" pos="8;791"/>
+   <todo name="TODO: identify versions" pos="7;805"/>
+   <todo name="TODO: Drop _data, _removeData)" pos="48;4190"/>
+   <todo name="TODO: Now that all calls to _data and _removeData have been replaced" pos="2;4258"/>
   </todofile>
  </todoblock>
  <dbgurls/>
@@ -366,13 +371,13 @@
   <file name="D:\OpenServer\domains\tasktracker\web\app\modules\admin\views\settings\_search.php" crc="1613305843500"/>
   <file name="D:\OpenServer\domains\tasktracker\web\app\modules\admin\views\settings\_form.php" crc="1613305843478"/>
   <file name="D:\OpenServer\domains\tasktracker\web\robots.txt" crc="1610113928542"/>
-  <file name="D:\OpenServer\domains\tasktracker\web\index.php" crc="1612013131059"/>
+  <file name="D:\OpenServer\domains\tasktracker\web\index.php" crc="1615050100520"/>
   <file name="D:\OpenServer\domains\tasktracker\web\index-test.php" crc="1610113928540"/>
   <file name="D:\OpenServer\domains\tasktracker\web\.htaccess" crc="1610110733289"/>
   <file name="D:\OpenServer\domains\tasktracker\views\site\login.php" crc="1610113928536"/>
   <file name="D:\OpenServer\domains\tasktracker\views\site\index.php" crc="1610110733286"/>
   <file name="D:\OpenServer\domains\tasktracker\views\site\error.php" crc="1610113928535"/>
-  <file name="D:\OpenServer\domains\tasktracker\views\layouts\main.php" crc="1612018655043"/>
+  <file name="D:\OpenServer\domains\tasktracker\views\layouts\main.php" crc="1615050237654"/>
   <file name="D:\OpenServer\domains\tasktracker\vendor\yiisoft\yii2-swiftmailer\Message.php" crc="1610112519002"/>
   <file name="D:\OpenServer\domains\tasktracker\vendor\yiisoft\yii2-swiftmailer\Mailer.php" crc="1610110732753"/>
   <file name="D:\OpenServer\domains\tasktracker\vendor\yiisoft\yii2-swiftmailer\Logger.php" crc="1610112519000"/>
@@ -5558,7 +5563,7 @@
   <file name="D:\OpenServer\domains\tasktracker\modules\tasks\views\tasks\_form.php" crc="1610110725568"/>
   <file name="D:\OpenServer\domains\tasktracker\modules\tasks\models\Tasks.php" crc="1610110725567"/>
   <file name="D:\OpenServer\domains\tasktracker\modules\tasks\models\Task_status.php" crc="1610113928507"/>
-  <file name="D:\OpenServer\domains\tasktracker\modules\tasks\models\SearchTasks.php" crc="1610110725565"/>
+  <file name="D:\OpenServer\domains\tasktracker\modules\tasks\models\SearchTasks.php" crc="1615049728792"/>
   <file name="D:\OpenServer\domains\tasktracker\modules\tasks\controllers\TasksController.php" crc="1613994512003"/>
   <file name="D:\OpenServer\domains\tasktracker\modules\tasks\Task.php" crc="1610113928506"/>
   <file name="D:\OpenServer\domains\tasktracker\modules\admin\views\users\view.php" crc="1610113928505"/>
@@ -5590,7 +5595,7 @@
   <file name="D:\OpenServer\domains\tasktracker\modules\admin\Admin.php" crc="1610113928495"/>
   <file name="D:\OpenServer\domains\tasktracker\models\LoginForm.php" crc="1610110725550"/>
   <file name="D:\OpenServer\domains\tasktracker\models\ContactForm.php" crc="1610113928494"/>
-  <file name="D:\OpenServer\domains\tasktracker\migrations\m210214_120909_settings.php" crc="1613992903093"/>
+  <file name="D:\OpenServer\domains\tasktracker\migrations\m210214_120909_settings.php" crc="1615048764240"/>
   <file name="D:\OpenServer\domains\tasktracker\migrations\m191123_061607_email_for_users.php" crc="1610110725548"/>
   <file name="D:\OpenServer\domains\tasktracker\migrations\m180901_230314_tasks.php" crc="1613987898100"/>
   <file name="D:\OpenServer\domains\tasktracker\migrations\m180901_230305_users.php" crc="1613987898130"/>
