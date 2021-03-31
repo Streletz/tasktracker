@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <div class="col-md-6">
         <h2>Настройки</h2>
-		<p><a href="<?= Yii::$app->getUrlManager()->createUrl(['admin/settings/index']); ?>">Общие</a></p>
+		<p><a href="<?= Yii::$app->getUrlManager()->createUrl(['admin/settings/default']); ?>">Общие</a></p>
     </div>
 	
 </div>

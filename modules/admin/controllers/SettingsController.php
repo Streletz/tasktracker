@@ -48,22 +48,6 @@ class SettingsController extends Controller
 	}
 
     /**
-     * Lists all Settings models.
-     * @return mixed
-     */
-    public function actionIndex()
-    {
-		return $this->redirect(['default']);
-        $searchModel = new SearchSettings();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
-    }
-
-    /**
      * Displays a single Settings model.
      * @param integer $id
      * @return mixed
@@ -74,46 +58,6 @@ class SettingsController extends Controller
 		throw new NotFoundHttpException('The requested page does not exist.');
         return $this->render('view', [
             'model' => $this->findModel($id),
-        ]);
-    }
-
-    /**
-     * Creates a new Settings model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
-    public function actionCreate()
-    {
-		throw new NotFoundHttpException('The requested page does not exist.');
-        $model = new Settings();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Updates an existing Settings model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionUpdate($id)
-    {
-		throw new NotFoundHttpException('The requested page does not exist.');
-        $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
-
-        return $this->render('update', [
-            'model' => $model,
         ]);
     }
     
@@ -130,20 +74,7 @@ class SettingsController extends Controller
 		]);
 	}
 
-    /**
-     * Deletes an existing Settings model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionDelete($id)
-    {
-		throw new NotFoundHttpException('The requested page does not exist.');
-        $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
-    }
 
     /**
      * Finds the Settings model based on its primary key value.
