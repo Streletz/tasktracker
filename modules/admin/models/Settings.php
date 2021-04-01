@@ -10,9 +10,7 @@ use Yii;
 * @property int $id
 * @property bool $email_notify
 * @property bool $can_set_myself_task
-* @property int $creator_id
 *
-* @property Users $creator
 */
 class Settings extends \yii\db\ActiveRecord
 {
@@ -31,11 +29,7 @@ class Settings extends \yii\db\ActiveRecord
 	{
 		return [
 			[['email_notify'], 'boolean'],
-			[['can_set_myself_task'], 'boolean'],
-			[['creator_id'], 'required'],
-			[['creator_id'], 'default', 'value' => null],
-			[['creator_id'], 'integer'],
-			[['creator_id'], 'exist', 'skipOnError' => true, 'targetClass' => Users::className(), 'targetAttribute' => ['creator_id' => 'id']],
+			[['can_set_myself_task'], 'boolean']
 		];
 	}
 
@@ -47,18 +41,11 @@ class Settings extends \yii\db\ActiveRecord
 		return [
 			'id' => 'ID',
 			'email_notify' => 'Уведомления по email',
-			'can_set_myself_task' => 'Разрешить ставить задачи самим себе',
-			'creator_id' => 'Создал',
+			'can_set_myself_task' => 'Разрешить ставить задачи самим себе'
 		];
 	}
 
 
-/**
-* @return \yii\db\ActiveQuery
-*/
-	public function getCreator()
-	{
-		return $this->hasOne(Users::className(), ['id' => 'creator_id']);
-	}
+
 
 }

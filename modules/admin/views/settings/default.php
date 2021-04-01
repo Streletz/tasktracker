@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\modules\admin\models\Settings */
 
-$this->title = "Настройки";
+$this->title = "Общие настройки";
 $this->params['breadcrumbs'][] = ['label' => 'Настройки', 'url' => ['admin/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

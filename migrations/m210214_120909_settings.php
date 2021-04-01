@@ -20,14 +20,10 @@ class m210214_120909_settings extends Migration
 			->defaultValue(true),
 			'can_set_myself_task' => $this->boolean()
 			->notNull()
-			->defaultValue(true),
-			'creator_id' => $this->integer(11)
-			->notNull()
+			->defaultValue(true)
 		]);
-		$this->addForeignKey('settings_creator_fk', self::TABLE_NAME, 'creator_id', 'users', 'id', null, 'CASCADE');
-		$this->insert(self::TABLE_NAME, [			
-			'email_notify' => true,			
-			'creator_id' => 1
+		$this->insert(self::TABLE_NAME, [
+			'email_notify' => true
 		]);
     }
 

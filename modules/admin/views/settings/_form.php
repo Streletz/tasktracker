@@ -16,8 +16,6 @@ use yii\widgets\ActiveForm;
     
 	<?= $form->field($model, 'can_set_myself_task')->checkbox() ?>
 
-    <?= $form->field($model, 'creator_id')->hiddenInput() ?>
-
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>
