@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\modules\admin\models\Settings */
 
 $this->title = 'Редактирование общих настроек ';
-$this->params['breadcrumbs'][] = ['label' => 'Настройки', 'url' => ['admin/index']];
+$this->params['breadcrumbs'][] = ['label' => 'Администрирование', 'url' => ['admin/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="settings-update">
