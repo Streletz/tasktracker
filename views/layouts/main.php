@@ -77,7 +77,7 @@ AppAsset::register($this);
     <div class="container">
 				<p class="pull-left" style="margin-right: 15px">Task tracker (версия <?= APP_VER ?>
 					<?php
-					if (PRE_RELEASE_TYPE) { ?> - <?php echo PRE_RELEASE_TYPE; } ?>) </p>
+					if (RELEASE_TYPE!=ReleaseType::STABLE) { ?> - <?php echo RELEASE_TYPE; } ?>) </p>
         <p class="pull-left">&copy; <a href="https://streletzcoder.ru/">Стрелец Coder</a>, 2018 - 2021</p>
 
         <p class="pull-right"><?= Yii::powered() ?></p>
