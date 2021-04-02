@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\bootstrap\Alert;
 
 /* @var $this yii\web\View */
 /* @var $model app\modules\tasks\models\Tasks */
@@ -13,7 +14,16 @@ $this->params['breadcrumbs'][] = 'Редактирование';
 <div class="tasks-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
+	<?php
+	if (Yii::$app->session->hasFlash('error_message'))
+		: ?>
+	<?= Alert::widget([
+		'options' => [
+			'class' => 'alert-danger',
+		],
+		'body' => Yii::$app->session->getFlash('error_message'),
+	]); ?>
+	<?php endif; ?> 
     <?= $this->render('_form', [
         'model' => $model,
         'workers'=> $workers,

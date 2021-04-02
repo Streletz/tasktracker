@@ -79,8 +79,7 @@ class m180901_230314_tasks extends Migration
         $this->addForeignKey('tasks_ibfk_1', self::TABLE_NAME, 'task_status_id', 'task_status', 'id', null, 'CASCADE');
         $this->addForeignKey('tasks_ibfk_2', self::TABLE_NAME, 'creator_id', 'users', 'id', null, 'CASCADE');
         $this->addForeignKey('tasks_ibfk_3', self::TABLE_NAME, 'worker_id', 'users', 'id', null, 'CASCADE');
-        $this->insert(self::TABLE_NAME, [
-            'id' => 1,
+        $this->insert(self::TABLE_NAME, [          
             'task_name' => 'Test',
             'description' => 'Test task',
             'creator_id' => 1,
@@ -90,8 +89,7 @@ class m180901_230314_tasks extends Migration
             'end_date' => null,
             'task_status_id' => 4
         ]);
-        $this->insert(self::TABLE_NAME, [
-            'id' => 2,
+        $this->insert(self::TABLE_NAME, [           
             'task_name' => 'Test',
             'description' => 'Test task 2',
             'creator_id' => 1,
@@ -101,8 +99,7 @@ class m180901_230314_tasks extends Migration
             'end_date' => null,
             'task_status_id' => 2
         ]);
-        $this->insert(self::TABLE_NAME, [
-            'id' => 3,
+        $this->insert(self::TABLE_NAME, [          
             'task_name' => 'Test',
             'description' => 'Test task 3',
             'creator_id' => 1,
@@ -112,8 +109,7 @@ class m180901_230314_tasks extends Migration
             'end_date' => null,
             'task_status_id' => 4
         ]);
-        $this->insert(self::TABLE_NAME, [
-            'id' => 4,
+        $this->insert(self::TABLE_NAME, [          
             'task_name' => 'Test',
             'description' => 'Test task 4',
             'creator_id' => 3,

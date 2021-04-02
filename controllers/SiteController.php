@@ -11,14 +11,14 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\modules\admin\models\Users;
 
-class SiteController extends Controller
-{
+class SiteController extends Controller {
+
     /**
      * {@inheritdoc}
      */
     private $isAdmin;
-    public function behaviors()
-    {
+
+    public function behaviors() {
         return [
             'access' => [
                 'class' => AccessControl::className(),
@@ -43,8 +43,7 @@ class SiteController extends Controller
     /**
      * {@inheritdoc}
      */
-    public function actions()
-    {
+    public function actions() {
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
@@ -61,13 +60,12 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionIndex()
-    {    
-        if(Yii::$app->user->isGuest){
+    public function actionIndex() {
+        if (Yii::$app->user->isGuest) {
             return $this->redirect(['site/login']);
-        }
-        $this->isAdmin=Users::findIdentity(Users::findIdentity(Yii::$app->user->id)->isAdmin());        
-        return $this->render('index',['isAdmin'=>$this->isAdmin]);
+        }       
+        $this->isAdmin = Yii::$app->user->identity->isAdmin();
+        return $this->render('index', ['isAdmin' => $this->isAdmin]);
     }
 
     /**
@@ -75,21 +73,20 @@ class SiteController extends Controller
      *
      * @return Response|string
      */
-    public function actionLogin()
-    {
+    public function actionLogin() {
         if (!Yii::$app->user->isGuest) {
-            
+
             return $this->goHome();
         }
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {            
+        if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         }
 
         $model->password = '';
         return $this->render('login', [
-            'model' => $model,
+                    'model' => $model,
         ]);
     }
 
@@ -98,11 +95,10 @@ class SiteController extends Controller
      *
      * @return Response
      */
-    public function actionLogout()
-    {
+    public function actionLogout() {
         Yii::$app->user->logout();
 
         return $this->goHome();
     }
-    
+
 }

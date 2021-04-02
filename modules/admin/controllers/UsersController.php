@@ -56,9 +56,7 @@ class UsersController extends Controller
     public function actionIndex()
     {
         $searchModel = new SearchUsers();
-        $request = Yii::$app->request;
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider
@@ -128,8 +126,9 @@ class UsersController extends Controller
                 $model->setPassword($model->pass);
             } else {
                 $model->pass = $userOldData->pass;
-            }           
-            if ($model->roletitle != reset($userOldData->getUserRoles())->name) {                
+            }
+            $rolesArray = $userOldData->getUserRoles();
+            if ($model->roletitle != reset($rolesArray)->name) {
                 Yii::$app->authManager->revokeAll($model->id);                
                 $userRole=Yii::$app->authManager->getRole($model->roletitle);                
                 Yii::$app->authManager->assign($userRole, $model->getId());

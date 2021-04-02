@@ -45,7 +45,7 @@ $config = [
         ],
         'notificator' => [
             'class' => 'app\components\Notificator'
-        ],
+        ],		
         'errorHandler' => [
             'errorAction' => 'site/error'
         ],
@@ -60,9 +60,9 @@ $config = [
                 // Your SMTP server
                 'host' => 'smtp.example.com',
                 // Your user name
-                'username' => 'example@exsmple.com',
+                'username' => 'my_smtp_login',
                 // Your password
-                'password' => '*******',
+                'password' => '******',
                 // Your port
                 'port' => '465',
                 'encryption' => 'ssl'

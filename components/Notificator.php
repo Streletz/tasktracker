@@ -28,12 +28,16 @@ class Notificator extends Component
      */
     public function email($to, $subject, $body)
     {
-        Yii::$app->mailer->compose()
-        ->setTo($to)
-        ->setFrom(['makartsev.e@yandex.ru' => Yii::$app->name])
-        ->setSubject($subject)
-        ->setTextBody($body)
-        ->send();
+		try {
+			Yii::$app->mailer->compose()
+			->setTo($to)
+			->setFrom([Yii::$app->params['adminEmail'] => Yii::$app->name])
+			->setSubject($subject)
+			->setTextBody($body)
+			->send();
+		} catch (\Swift_TransportException $ex) {
+			Yii::error($ex->getMessage() ,__METHOD__);
+		}
     }
 }
 

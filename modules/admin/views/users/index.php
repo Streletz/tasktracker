@@ -13,29 +13,30 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="users-index">
 
-	<h1><?= Html::encode($this->title) ?></h1>  
-	
-	<?php if (Yii::$app->session->hasFlash('error_message')): ?> 
-    <?= Alert::widget([
+    <h1><?= Html::encode($this->title) ?></h1>
+
+    <?php if (Yii::$app->session->hasFlash('error_message')): ?>
+        <?= Alert::widget([
             'options' => [
-            'class' => 'alert-danger',
+                'class' => 'alert-danger',
             ],
             'body' => Yii::$app->session->getFlash('error_message'),
-        ]);?> 
-	<?php endif; ?>   
+        ]); ?>
+    <?php endif; ?>
 
     <p>
         <?= Html::a('Новый', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>    
-    
+    </p>
 
-    <?=GridView::widget(['dataProvider' => $dataProvider,'filterModel' => $searchModel,
+
+    <?= GridView::widget(['dataProvider' => $dataProvider, 'filterModel' => $searchModel,
         'columns' => [['class' => 'yii\grid\SerialColumn'],
-            ['attribute' => 'username','label' => 'Логин'],
-            ['attribute' => 'fio','label' => 'ФИО'],   
-            ['attribute' => 'email','label' => 'email'], 
-            ['attribute' => 'roleName','label' => 'Роль', 'value'=>function($model){
-                return reset($model->getUserRoles())->description;
+            ['attribute' => 'username', 'label' => 'Логин'],
+            ['attribute' => 'fio', 'label' => 'ФИО'],
+            ['attribute' => 'email', 'label' => 'email'],
+            ['attribute' => 'roleName', 'label' => 'Роль', 'value' => function ($model) {
+                $roles = $model->getUserRoles();
+                return reset($roles)->description;
             }],
             ['class' => 'yii\grid\ActionColumn']]]);
     ?>
